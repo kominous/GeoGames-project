@@ -1,0 +1,161 @@
+/* ============================================
+   GeoGames — Shared Utilities
+   ============================================ */
+
+const GeoUtils = {
+  /**
+   * Load the master countries dataset
+   * @returns {Promise<Array>} array of country objects
+   */
+  async loadCountries() {
+    const res = await fetch('/data/countries.json');
+    return res.json();
+  },
+
+  /**
+   * Shuffle an array (Fisher-Yates)
+   */
+  shuffle(arr) {
+    const a = [...arr];
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  },
+
+  /**
+   * Pick n random items from an array
+   */
+  pickRandom(arr, n = 1) {
+    return this.shuffle(arr).slice(0, n);
+  },
+
+  /**
+   * Format a number with commas: 1234567 → "1,234,567"
+   */
+  formatNumber(num) {
+    return num.toLocaleString('en-US');
+  },
+
+  /**
+   * Calculate distance between two lat/lng points in km (Haversine)
+   */
+  distanceKm(lat1, lng1, lat2, lng2) {
+    const R = 6371;
+    const dLat = (lat2 - lat1) * Math.PI / 180;
+    const dLng = (lng2 - lng1) * Math.PI / 180;
+    const a =
+      Math.sin(dLat / 2) ** 2 +
+      Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+      Math.sin(dLng / 2) ** 2;
+    return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  },
+
+  /**
+   * Show a flash result on screen (CORRECT / WRONG)
+   */
+  showFlash(correct) {
+    const el = document.createElement('div');
+    el.className = `result-flash ${correct ? 'correct' : 'wrong'}`;
+    el.textContent = correct ? '✓' : '✗';
+    document.body.appendChild(el);
+    setTimeout(() => el.remove(), 700);
+  },
+
+  /**
+   * Get a flag emoji from a 2-letter country code
+   * e.g. "nl" → "🇳🇱"
+   */
+  flagEmoji(code) {
+    return code
+      .toUpperCase()
+      .split('')
+      .map(c => String.fromCodePoint(0x1F1E6 + c.charCodeAt(0) - 65))
+      .join('');
+  },
+
+  /**
+   * Get a flag <img> HTML string from a 2-letter country code
+   * Uses flagcdn.com for reliable cross-platform rendering
+   * e.g. flagImg("nl", "Netherlands") → '<img src="..." ...>'
+   */
+  flagImg(code, alt = '') {
+    const c = code.toLowerCase();
+    return `<img src="https://flagcdn.com/w80/${c}.webp" alt="${alt} flag" class="flag-img">`;
+  },
+
+  /**
+   * Generate a shareable score text
+   */
+  shareText(gameName, score, extra = '') {
+    const url = window.location.href;
+    let text = `🌍 ${gameName}: ${score}`;
+    if (extra) text += ` ${extra}`;
+    text += `\n\nPlay at ${url}`;
+    return text;
+  },
+
+  /**
+   * Copy text to clipboard and optionally open Twitter/X share
+   */
+  async share(gameName, score, extra = '') {
+    const text = this.shareText(gameName, score, extra);
+
+    if (navigator.share) {
+      try {
+        await navigator.share({ text });
+        return;
+      } catch (e) { /* user cancelled, fall through */ }
+    }
+
+    // Fallback: copy to clipboard
+    try {
+      await navigator.clipboard.writeText(text);
+      alert('Score copied to clipboard!');
+    } catch (e) {
+      // Last resort
+      prompt('Copy your score:', text);
+    }
+  },
+
+  /**
+   * Simple high score stored in localStorage
+   */
+  getHighScore(gameKey) {
+    return parseInt(localStorage.getItem(`geo_hs_${gameKey}`) || '0', 10);
+  },
+
+  setHighScore(gameKey, score) {
+    const current = this.getHighScore(gameKey);
+    if (score > current) {
+      localStorage.setItem(`geo_hs_${gameKey}`, score.toString());
+      return true; // new high score
+    }
+    return false;
+  },
+
+  /**
+   * Create a countdown timer element
+   * @param {number} seconds - starting seconds
+   * @param {function} onTick - called each second with remaining seconds
+   * @param {function} onEnd - called when timer hits 0
+   * @returns {{ stop: function }} control object
+   */
+  startTimer(seconds, onTick, onEnd) {
+    let remaining = seconds;
+    onTick(remaining);
+    const interval = setInterval(() => {
+      remaining--;
+      onTick(remaining);
+      if (remaining <= 0) {
+        clearInterval(interval);
+        onEnd();
+      }
+    }, 1000);
+    return {
+      stop() { clearInterval(interval); },
+      getRemaining() { return remaining; }
+    };
+  }
+};

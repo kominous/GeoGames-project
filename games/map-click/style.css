@@ -1,0 +1,215 @@
+/* Map Click — Game Styles */
+
+/* Override container width for the map layout */
+.map-game-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-md);
+}
+
+.map-game-header {
+  margin-bottom: var(--space-lg);
+}
+
+/* Prompt card above the map */
+.prompt-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-md) var(--space-lg);
+  margin-bottom: var(--space-md);
+}
+
+.prompt-flag .flag-img {
+  width: 60px;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.prompt-label {
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 2px;
+}
+
+.prompt-country {
+  font-family: var(--font-mono);
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.prompt-capital {
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  margin-top: 2px;
+}
+
+/* Map */
+#map {
+  width: 100%;
+  height: 480px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+/* Override Leaflet popup styling to match theme */
+.leaflet-popup-content-wrapper {
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+}
+
+.leaflet-popup-tip {
+  background: var(--bg-card);
+}
+
+.leaflet-popup-close-button {
+  color: var(--text-secondary) !important;
+}
+
+/* Click hint */
+.click-hint {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-top: var(--space-sm);
+  font-style: italic;
+  min-height: 1.4rem;
+}
+
+/* Custom map markers */
+.map-pin {
+  font-size: 1.8rem;
+  line-height: 1;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6));
+}
+
+.answer-pin {
+  animation: popIn 0.3s ease forwards;
+}
+
+@keyframes popIn {
+  from { transform: scale(0); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+/* Round result panel */
+.round-result {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-md) var(--space-lg);
+  margin-top: var(--space-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-lg);
+  animation: slideUp 0.25s ease;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.result-row {
+  display: flex;
+  gap: var(--space-xl);
+}
+
+.result-item {
+  text-align: center;
+}
+
+.result-label {
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 2px;
+}
+
+.result-value {
+  font-family: var(--font-mono);
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.result-value.excellent { color: var(--accent-green); }
+.result-value.good      { color: var(--accent-warm); }
+.result-value.poor      { color: var(--accent-red); }
+
+/* Game over extras */
+.final-max {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-top: var(--space-xs);
+  margin-bottom: var(--space-md);
+}
+
+/* Country name labels on the map */
+.country-label {
+  background: none !important;
+  border: none !important;
+  color: rgba(141, 163, 184, 0.8);
+  font-family: 'Space Mono', monospace;
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-align: center;
+  pointer-events: none;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.95), 0 0 8px rgba(0, 0, 0, 0.8);
+  line-height: 1;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .map-game-wrapper {
+    padding: var(--space-md);
+  }
+
+  #map {
+    height: 340px;
+  }
+
+  .prompt-card {
+    gap: var(--space-md);
+  }
+
+  .prompt-flag .flag-img {
+    width: 44px;
+  }
+
+  .prompt-country {
+    font-size: 1.1rem;
+  }
+
+  .round-result {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+
+  .result-row {
+    justify-content: center;
+  }
+
+  #next-btn {
+    width: 100%;
+  }
+}

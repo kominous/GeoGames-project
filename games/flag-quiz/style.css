@@ -1,0 +1,100 @@
+/* Flag Quiz — Game Styles */
+
+.flag-display {
+  text-align: center;
+  margin: var(--space-xl) 0 var(--space-lg);
+}
+
+.flag-display img {
+  width: 240px;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+}
+
+.input-row {
+  display: flex;
+  gap: var(--space-md);
+  max-width: 500px;
+  margin: 0 auto var(--space-md);
+}
+
+.answer-input {
+  flex: 1;
+  padding: var(--space-md) var(--space-lg);
+  background: var(--bg-card);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.answer-input:focus {
+  border-color: var(--accent);
+}
+
+.answer-input.correct {
+  border-color: var(--accent-green);
+}
+
+.answer-input.wrong {
+  border-color: var(--accent-red);
+}
+
+.answer-input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.feedback {
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  min-height: 1.8rem;
+  margin-bottom: var(--space-sm);
+}
+
+.feedback.correct {
+  color: var(--accent-green);
+}
+
+.feedback.wrong {
+  color: var(--accent-red);
+}
+
+/* Pulse animation on correct */
+@keyframes pulse-green {
+  0%   { box-shadow: 0 4px 24px rgba(0,0,0,0.5); }
+  50%  { box-shadow: 0 0 32px rgba(52, 211, 153, 0.5); }
+  100% { box-shadow: 0 4px 24px rgba(0,0,0,0.5); }
+}
+
+.flag-display img.correct-pulse {
+  animation: pulse-green 0.6s ease;
+}
+
+/* Shake animation on wrong */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%       { transform: translateX(-8px); }
+  40%       { transform: translateX(8px); }
+  60%       { transform: translateX(-5px); }
+  80%       { transform: translateX(5px); }
+}
+
+.answer-input.shake {
+  animation: shake 0.4s ease;
+}
+
+@media (max-width: 640px) {
+  .flag-display img {
+    width: 180px;
+  }
+
+  .input-row {
+    flex-direction: column;
+  }
+}

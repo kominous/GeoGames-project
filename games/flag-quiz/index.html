@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Flag Quiz — identify the country from its flag.">
+  <title>Flag Quiz — GeoGames</title>
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="/" class="site-logo">
+      <span class="logo-icon">🌍</span>
+      <span class="logo-text">Geo<span>Games</span></span>
+    </a>
+    <nav>
+      <ul class="site-nav">
+        <li><a href="/">← All Games</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="game-container">
+    <h1 class="game-title">Flag Quiz</h1>
+    <p class="game-subtitle">Which country does this flag belong to?
+      <br>Careful! You only get 1 guess per country so watch out for typos! (Common aliases accepted) </p>
+    
+    
+
+    <!-- Score bar -->
+    <div class="score-bar">
+      <div>
+        <div class="label">Score</div>
+        <div class="value streak" id="score">0</div>
+      </div>
+      <div>
+        <div class="label">Round</div>
+        <div class="value" id="round">1 / 10</div>
+      </div>
+      <div>
+        <div class="label">Best</div>
+        <div class="value" id="best">0</div>
+      </div>
+    </div>
+
+    <!-- Game area -->
+    <div id="game-area">
+      <div class="flag-display">
+        <img id="flag-img" src="" alt="Country flag">
+      </div>
+
+      <div class="input-row">
+        <input
+          type="text"
+          id="answer-input"
+          class="answer-input"
+          placeholder="Type country name…"
+          autocomplete="off"
+          autocorrect="off"
+          spellcheck="false"
+        >
+        <button class="btn btn-primary" id="submit-btn" onclick="submitGuess()">Submit</button>
+      </div>
+
+      <div id="feedback" class="feedback"></div>
+    </div>
+
+    <!-- Game over -->
+    <div id="game-over" class="game-over" style="display:none;">
+      <div class="final-label">FINAL SCORE</div>
+      <div class="final-score" id="final-score">0 / 10</div>
+      <div style="margin-top: var(--space-lg);">
+        <button class="btn btn-primary" onclick="startGame()">Play Again</button>
+        <button class="btn share-btn" onclick="shareScore()">Share Score</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/shared.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>

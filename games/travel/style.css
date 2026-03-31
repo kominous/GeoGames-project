@@ -1,0 +1,227 @@
+/* Travel — Game Styles */
+
+/* Endpoints (FROM → TO) */
+.endpoints {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-lg);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  margin-bottom: var(--space-lg);
+}
+
+.endpoint {
+  text-align: center;
+  flex: 1;
+  max-width: 200px;
+}
+
+.endpoint-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: var(--space-xs);
+}
+
+.start-endpoint .endpoint-label { color: var(--accent-green); }
+.dest-endpoint  .endpoint-label { color: var(--accent-warm); }
+
+.endpoint-flag .flag-img {
+  width: 64px;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  margin-bottom: var(--space-xs);
+}
+
+.endpoint-name {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.endpoint-arrow {
+  font-size: 1.8rem;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+/* Route bar */
+.route-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-xs);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-sm) var(--space-md);
+  margin-bottom: var(--space-lg);
+  min-height: 44px;
+  font-size: 0.85rem;
+  font-family: var(--font-mono);
+}
+
+.route-step {
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.route-step.route-current {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.route-arrow {
+  color: var(--text-muted);
+}
+
+/* Current country panel */
+.current-panel {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+  padding: var(--space-lg);
+  background: var(--bg-card);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-md);
+}
+
+.current-label {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: var(--space-xs);
+}
+
+.current-country {
+  font-family: var(--font-mono);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: var(--space-sm);
+}
+
+.current-flag .flag-img {
+  width: 80px;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+/* Neighbor buttons */
+.neighbors-label {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  margin-bottom: var(--space-sm);
+  text-align: center;
+}
+
+.neighbors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+
+.neighbor-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, transform 0.1s;
+  text-align: left;
+}
+
+.neighbor-btn:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.neighbor-btn:active {
+  transform: scale(0.97);
+}
+
+.neighbor-btn.neighbor-dest {
+  border-color: var(--accent-warm);
+  background: rgba(245, 158, 11, 0.08);
+  font-weight: 700;
+}
+
+.neighbor-btn.neighbor-dest:hover {
+  background: rgba(245, 158, 11, 0.18);
+}
+
+.neighbor-btn.neighbor-visited {
+  opacity: 0.45;
+  border-style: dashed;
+}
+
+.neighbor-flag {
+  font-size: 1.4rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.neighbor-name {
+  line-height: 1.2;
+}
+
+/* Game over */
+.result-detail {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-bottom: var(--space-lg);
+}
+
+.final-route {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  font-size: 0.85rem;
+  font-family: var(--font-mono);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  margin-bottom: var(--space-lg);
+  color: var(--text-secondary);
+}
+
+.final-step {
+  white-space: nowrap;
+}
+
+.final-arrow {
+  color: var(--text-muted);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .endpoints {
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .endpoint-arrow {
+    transform: rotate(90deg);
+  }
+
+  .neighbors-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
+}

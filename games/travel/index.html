@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Travel — find the shortest route between two countries by crossing neighbors.">
+  <title>Travel — GeoGames</title>
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="/" class="site-logo">
+      <span class="logo-icon">🌍</span>
+      <span class="logo-text">Geo<span>Games</span></span>
+    </a>
+    <nav>
+      <ul class="site-nav">
+        <li><a href="/">← All Games</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="game-container">
+    <h1 class="game-title">Travel</h1>
+    <p class="game-subtitle">Get from the start country to the destination by crossing neighboring countries. Find the shortest route!</p>
+
+    <!-- Score bar -->
+    <div class="score-bar">
+      <div>
+        <div class="label">Your Steps</div>
+        <div class="value" id="steps-taken">0</div>
+      </div>
+      <div>
+        <div class="label">Optimal</div>
+        <div class="value streak" id="optimal-steps">?</div>
+      </div>
+      <div>
+        <div class="label">Best (fewest extra)</div>
+        <div class="value" id="best">—</div>
+      </div>
+    </div>
+
+    <!-- Route display -->
+    <div id="route-bar" class="route-bar">
+      <!-- filled dynamically -->
+    </div>
+
+    <!-- Game area -->
+    <div id="game-area">
+
+      <!-- Endpoints -->
+      <div class="endpoints">
+        <div class="endpoint start-endpoint">
+          <div class="endpoint-label">FROM</div>
+          <div class="endpoint-flag" id="start-flag"></div>
+          <div class="endpoint-name" id="start-name"></div>
+        </div>
+        <div class="endpoint-arrow">→</div>
+        <div class="endpoint dest-endpoint">
+          <div class="endpoint-label">TO</div>
+          <div class="endpoint-flag" id="dest-flag"></div>
+          <div class="endpoint-name" id="dest-name"></div>
+        </div>
+      </div>
+
+      <!-- Current country + neighbors -->
+      <div class="current-panel">
+        <div class="current-label">You are in</div>
+        <div class="current-country" id="current-name"></div>
+        <div class="current-flag" id="current-flag"></div>
+      </div>
+
+      <div class="neighbors-label">Choose your next country:</div>
+      <div class="neighbors-grid" id="neighbors-grid">
+        <!-- neighbor buttons injected here -->
+      </div>
+
+    </div>
+
+    <!-- Game over -->
+    <div id="game-over" class="game-over" style="display:none;">
+      <div class="final-label" id="result-label">ARRIVED!</div>
+      <div class="final-score" id="result-steps"></div>
+      <div class="result-detail" id="result-detail"></div>
+      <div class="final-route" id="final-route"></div>
+      <div style="margin-top: var(--space-lg);">
+        <button class="btn btn-primary" onclick="startGame()">Play Again</button>
+        <button class="btn share-btn" onclick="shareScore()">Share</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="/js/shared.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>

@@ -9,7 +9,15 @@
     "lat": 34.53,
     "lng": 69.17,
     "gdp_per_capita": 363,
-    "capital_population": 4400000
+    "capital_population": 4400000,
+    "neighbors": [
+      "Pakistan",
+      "Iran",
+      "Turkmenistan",
+      "Uzbekistan",
+      "Tajikistan",
+      "China"
+    ]
   },
   {
     "name": "Albania",
@@ -21,7 +29,13 @@
     "lat": 41.33,
     "lng": 19.82,
     "gdp_per_capita": 6810,
-    "capital_population": 900000
+    "capital_population": 900000,
+    "neighbors": [
+      "Montenegro",
+      "Kosovo",
+      "North Macedonia",
+      "Greece"
+    ]
   },
   {
     "name": "Algeria",
@@ -33,7 +47,15 @@
     "lat": 36.75,
     "lng": 3.04,
     "gdp_per_capita": 3900,
-    "capital_population": 3415000
+    "capital_population": 3415000,
+    "neighbors": [
+      "Morocco",
+      "Tunisia",
+      "Libya",
+      "Niger",
+      "Mali",
+      "Mauritania"
+    ]
   },
   {
     "name": "Andorra",
@@ -45,7 +67,11 @@
     "lat": 42.51,
     "lng": 1.52,
     "gdp_per_capita": 43270,
-    "capital_population": 23000
+    "capital_population": 23000,
+    "neighbors": [
+      "France",
+      "Spain"
+    ]
   },
   {
     "name": "Angola",
@@ -57,7 +83,13 @@
     "lat": -8.84,
     "lng": 13.23,
     "gdp_per_capita": 2380,
-    "capital_population": 9292000
+    "capital_population": 9292000,
+    "neighbors": [
+      "DR Congo",
+      "Congo",
+      "Zambia",
+      "Namibia"
+    ]
   },
   {
     "name": "Antigua and Barbuda",
@@ -69,7 +101,8 @@
     "lat": 17.12,
     "lng": -61.85,
     "gdp_per_capita": 17690,
-    "capital_population": 22000
+    "capital_population": 22000,
+    "neighbors": []
   },
   {
     "name": "Argentina",
@@ -78,10 +111,17 @@
     "area": 2780400,
     "continent": "South America",
     "flag": "ar",
-    "lat": -34.60,
+    "lat": -34.6,
     "lng": -58.38,
     "gdp_per_capita": 13650,
-    "capital_population": 3075000
+    "capital_population": 3075000,
+    "neighbors": [
+      "Chile",
+      "Bolivia",
+      "Paraguay",
+      "Brazil",
+      "Uruguay"
+    ]
   },
   {
     "name": "Armenia",
@@ -93,7 +133,13 @@
     "lat": 40.18,
     "lng": 44.51,
     "gdp_per_capita": 6070,
-    "capital_population": 1093000
+    "capital_population": 1093000,
+    "neighbors": [
+      "Turkey",
+      "Georgia",
+      "Azerbaijan",
+      "Iran"
+    ]
   },
   {
     "name": "Australia",
@@ -105,7 +151,8 @@
     "lat": -35.28,
     "lng": 149.13,
     "gdp_per_capita": 64490,
-    "capital_population": 471000
+    "capital_population": 471000,
+    "neighbors": []
   },
   {
     "name": "Austria",
@@ -117,7 +164,17 @@
     "lat": 48.21,
     "lng": 16.37,
     "gdp_per_capita": 56800,
-    "capital_population": 1935000
+    "capital_population": 1935000,
+    "neighbors": [
+      "Germany",
+      "Czech Republic",
+      "Slovakia",
+      "Hungary",
+      "Slovenia",
+      "Switzerland",
+      "Liechtenstein",
+      "Italy"
+    ]
   },
   {
     "name": "Azerbaijan",
@@ -129,7 +186,14 @@
     "lat": 40.41,
     "lng": 49.87,
     "gdp_per_capita": 7020,
-    "capital_population": 2310000
+    "capital_population": 2310000,
+    "neighbors": [
+      "Russia",
+      "Georgia",
+      "Armenia",
+      "Iran",
+      "Turkey"
+    ]
   },
   {
     "name": "Bahamas",
@@ -141,7 +205,8 @@
     "lat": 25.04,
     "lng": -77.35,
     "gdp_per_capita": 31970,
-    "capital_population": 280000
+    "capital_population": 280000,
+    "neighbors": []
   },
   {
     "name": "Bahrain",
@@ -153,7 +218,8 @@
     "lat": 26.22,
     "lng": 50.59,
     "gdp_per_capita": 29620,
-    "capital_population": 200000
+    "capital_population": 200000,
+    "neighbors": []
   },
   {
     "name": "Bangladesh",
@@ -165,7 +231,11 @@
     "lat": 23.81,
     "lng": 90.41,
     "gdp_per_capita": 2688,
-    "capital_population": 10279000
+    "capital_population": 10279000,
+    "neighbors": [
+      "India",
+      "Myanmar"
+    ]
   },
   {
     "name": "Barbados",
@@ -174,10 +244,11 @@
     "area": 431,
     "continent": "North America",
     "flag": "bb",
-    "lat": 13.10,
+    "lat": 13.1,
     "lng": -59.62,
     "gdp_per_capita": 17290,
-    "capital_population": 110000
+    "capital_population": 110000,
+    "neighbors": []
   },
   {
     "name": "Belarus",
@@ -186,10 +257,17 @@
     "area": 207600,
     "continent": "Europe",
     "flag": "by",
-    "lat": 53.90,
+    "lat": 53.9,
     "lng": 27.57,
     "gdp_per_capita": 7340,
-    "capital_population": 2020000
+    "capital_population": 2020000,
+    "neighbors": [
+      "Russia",
+      "Ukraine",
+      "Poland",
+      "Lithuania",
+      "Latvia"
+    ]
   },
   {
     "name": "Belgium",
@@ -201,7 +279,13 @@
     "lat": 50.85,
     "lng": 4.35,
     "gdp_per_capita": 51740,
-    "capital_population": 1200000
+    "capital_population": 1200000,
+    "neighbors": [
+      "France",
+      "Netherlands",
+      "Germany",
+      "Luxembourg"
+    ]
   },
   {
     "name": "Belize",
@@ -213,7 +297,11 @@
     "lat": 17.25,
     "lng": -88.77,
     "gdp_per_capita": 5400,
-    "capital_population": 27000
+    "capital_population": 27000,
+    "neighbors": [
+      "Mexico",
+      "Guatemala"
+    ]
   },
   {
     "name": "Benin",
@@ -225,7 +313,13 @@
     "lat": 6.37,
     "lng": 2.42,
     "gdp_per_capita": 1410,
-    "capital_population": 300000
+    "capital_population": 300000,
+    "neighbors": [
+      "Togo",
+      "Nigeria",
+      "Niger",
+      "Burkina Faso"
+    ]
   },
   {
     "name": "Bhutan",
@@ -237,7 +331,11 @@
     "lat": 27.47,
     "lng": 89.64,
     "gdp_per_capita": 3390,
-    "capital_population": 203000
+    "capital_population": 203000,
+    "neighbors": [
+      "India",
+      "China"
+    ]
   },
   {
     "name": "Bolivia",
@@ -249,7 +347,14 @@
     "lat": -19.03,
     "lng": -65.26,
     "gdp_per_capita": 3780,
-    "capital_population": 370000
+    "capital_population": 370000,
+    "neighbors": [
+      "Peru",
+      "Brazil",
+      "Paraguay",
+      "Argentina",
+      "Chile"
+    ]
   },
   {
     "name": "Bosnia and Herzegovina",
@@ -261,7 +366,12 @@
     "lat": 43.85,
     "lng": 18.36,
     "gdp_per_capita": 7050,
-    "capital_population": 340000
+    "capital_population": 340000,
+    "neighbors": [
+      "Croatia",
+      "Serbia",
+      "Montenegro"
+    ]
   },
   {
     "name": "Botswana",
@@ -273,7 +383,13 @@
     "lat": -24.65,
     "lng": 25.91,
     "gdp_per_capita": 7930,
-    "capital_population": 270000
+    "capital_population": 270000,
+    "neighbors": [
+      "South Africa",
+      "Namibia",
+      "Zimbabwe",
+      "Zambia"
+    ]
   },
   {
     "name": "Brazil",
@@ -285,7 +401,18 @@
     "lat": -15.79,
     "lng": -47.88,
     "gdp_per_capita": 8920,
-    "capital_population": 3094000
+    "capital_population": 3094000,
+    "neighbors": [
+      "Uruguay",
+      "Argentina",
+      "Paraguay",
+      "Bolivia",
+      "Peru",
+      "Colombia",
+      "Venezuela",
+      "Guyana",
+      "Suriname"
+    ]
   },
   {
     "name": "Brunei",
@@ -297,7 +424,10 @@
     "lat": 4.94,
     "lng": 114.95,
     "gdp_per_capita": 33530,
-    "capital_population": 100000
+    "capital_population": 100000,
+    "neighbors": [
+      "Malaysia"
+    ]
   },
   {
     "name": "Bulgaria",
@@ -306,10 +436,17 @@
     "area": 110879,
     "continent": "Europe",
     "flag": "bg",
-    "lat": 42.70,
+    "lat": 42.7,
     "lng": 23.32,
     "gdp_per_capita": 12450,
-    "capital_population": 1307000
+    "capital_population": 1307000,
+    "neighbors": [
+      "Romania",
+      "Serbia",
+      "North Macedonia",
+      "Greece",
+      "Turkey"
+    ]
   },
   {
     "name": "Burkina Faso",
@@ -321,7 +458,15 @@
     "lat": 12.37,
     "lng": -1.53,
     "gdp_per_capita": 870,
-    "capital_population": 3860000
+    "capital_population": 3860000,
+    "neighbors": [
+      "Mali",
+      "Niger",
+      "Benin",
+      "Togo",
+      "Ghana",
+      "Ivory Coast"
+    ]
   },
   {
     "name": "Burundi",
@@ -333,7 +478,12 @@
     "lat": -3.43,
     "lng": 29.93,
     "gdp_per_capita": 230,
-    "capital_population": 90000
+    "capital_population": 90000,
+    "neighbors": [
+      "DR Congo",
+      "Rwanda",
+      "Tanzania"
+    ]
   },
   {
     "name": "Cabo Verde",
@@ -345,7 +495,8 @@
     "lat": 14.93,
     "lng": -23.51,
     "gdp_per_capita": 3820,
-    "capital_population": 160000
+    "capital_population": 160000,
+    "neighbors": []
   },
   {
     "name": "Cambodia",
@@ -357,7 +508,12 @@
     "lat": 11.57,
     "lng": 104.92,
     "gdp_per_capita": 1790,
-    "capital_population": 2282000
+    "capital_population": 2282000,
+    "neighbors": [
+      "Thailand",
+      "Laos",
+      "Vietnam"
+    ]
   },
   {
     "name": "Cameroon",
@@ -369,7 +525,15 @@
     "lat": 3.87,
     "lng": 11.52,
     "gdp_per_capita": 1670,
-    "capital_population": 4336000
+    "capital_population": 4336000,
+    "neighbors": [
+      "Nigeria",
+      "Chad",
+      "Central African Republic",
+      "Congo",
+      "Gabon",
+      "Equatorial Guinea"
+    ]
   },
   {
     "name": "Canada",
@@ -379,9 +543,12 @@
     "continent": "North America",
     "flag": "ca",
     "lat": 45.42,
-    "lng": -75.70,
+    "lng": -75.7,
     "gdp_per_capita": 52050,
-    "capital_population": 1017000
+    "capital_population": 1017000,
+    "neighbors": [
+      "United States"
+    ]
   },
   {
     "name": "Central African Republic",
@@ -393,7 +560,15 @@
     "lat": 4.36,
     "lng": 18.56,
     "gdp_per_capita": 480,
-    "capital_population": 1098000
+    "capital_population": 1098000,
+    "neighbors": [
+      "Chad",
+      "Sudan",
+      "DR Congo",
+      "Congo",
+      "Cameroon",
+      "South Sudan"
+    ]
   },
   {
     "name": "Chad",
@@ -405,7 +580,15 @@
     "lat": 12.11,
     "lng": 15.04,
     "gdp_per_capita": 720,
-    "capital_population": 1476000
+    "capital_population": 1476000,
+    "neighbors": [
+      "Libya",
+      "Sudan",
+      "Central African Republic",
+      "Cameroon",
+      "Nigeria",
+      "Niger"
+    ]
   },
   {
     "name": "Chile",
@@ -417,7 +600,12 @@
     "lat": -33.45,
     "lng": -70.67,
     "gdp_per_capita": 16800,
-    "capital_population": 6745000
+    "capital_population": 6745000,
+    "neighbors": [
+      "Peru",
+      "Bolivia",
+      "Argentina"
+    ]
   },
   {
     "name": "China",
@@ -426,10 +614,26 @@
     "area": 9596961,
     "continent": "Asia",
     "flag": "cn",
-    "lat": 39.90,
-    "lng": 116.40,
+    "lat": 39.9,
+    "lng": 116.4,
     "gdp_per_capita": 12720,
-    "capital_population": 21893000
+    "capital_population": 21893000,
+    "neighbors": [
+      "Russia",
+      "Mongolia",
+      "Kazakhstan",
+      "Kyrgyzstan",
+      "Tajikistan",
+      "Afghanistan",
+      "Pakistan",
+      "India",
+      "Nepal",
+      "Bhutan",
+      "Myanmar",
+      "Laos",
+      "Vietnam",
+      "North Korea"
+    ]
   },
   {
     "name": "Colombia",
@@ -441,7 +645,14 @@
     "lat": 4.71,
     "lng": -74.07,
     "gdp_per_capita": 6630,
-    "capital_population": 8034000
+    "capital_population": 8034000,
+    "neighbors": [
+      "Venezuela",
+      "Brazil",
+      "Peru",
+      "Ecuador",
+      "Panama"
+    ]
   },
   {
     "name": "Comoros",
@@ -450,10 +661,11 @@
     "area": 1862,
     "continent": "Africa",
     "flag": "km",
-    "lat": -11.70,
+    "lat": -11.7,
     "lng": 43.26,
     "gdp_per_capita": 1540,
-    "capital_population": 63000
+    "capital_population": 63000,
+    "neighbors": []
   },
   {
     "name": "Congo",
@@ -465,7 +677,14 @@
     "lat": -4.27,
     "lng": 15.28,
     "gdp_per_capita": 2430,
-    "capital_population": 2388000
+    "capital_population": 2388000,
+    "neighbors": [
+      "Cameroon",
+      "Central African Republic",
+      "DR Congo",
+      "Gabon",
+      "Angola"
+    ]
   },
   {
     "name": "Costa Rica",
@@ -477,7 +696,11 @@
     "lat": 9.93,
     "lng": -84.08,
     "gdp_per_capita": 12030,
-    "capital_population": 345000
+    "capital_population": 345000,
+    "neighbors": [
+      "Nicaragua",
+      "Panama"
+    ]
   },
   {
     "name": "Croatia",
@@ -489,7 +712,14 @@
     "lat": 45.81,
     "lng": 15.98,
     "gdp_per_capita": 17990,
-    "capital_population": 806000
+    "capital_population": 806000,
+    "neighbors": [
+      "Slovenia",
+      "Hungary",
+      "Serbia",
+      "Bosnia and Herzegovina",
+      "Montenegro"
+    ]
   },
   {
     "name": "Cuba",
@@ -501,7 +731,8 @@
     "lat": 23.13,
     "lng": -82.38,
     "gdp_per_capita": 9500,
-    "capital_population": 2141000
+    "capital_population": 2141000,
+    "neighbors": []
   },
   {
     "name": "Cyprus",
@@ -513,7 +744,8 @@
     "lat": 35.17,
     "lng": 33.37,
     "gdp_per_capita": 31230,
-    "capital_population": 330000
+    "capital_population": 330000,
+    "neighbors": []
   },
   {
     "name": "Czech Republic",
@@ -525,7 +757,13 @@
     "lat": 50.08,
     "lng": 14.44,
     "gdp_per_capita": 27200,
-    "capital_population": 1357000
+    "capital_population": 1357000,
+    "neighbors": [
+      "Germany",
+      "Austria",
+      "Slovakia",
+      "Poland"
+    ]
   },
   {
     "name": "DR Congo",
@@ -537,7 +775,18 @@
     "lat": -4.33,
     "lng": 15.32,
     "gdp_per_capita": 570,
-    "capital_population": 17071000
+    "capital_population": 17071000,
+    "neighbors": [
+      "Congo",
+      "Central African Republic",
+      "South Sudan",
+      "Uganda",
+      "Rwanda",
+      "Burundi",
+      "Tanzania",
+      "Zambia",
+      "Angola"
+    ]
   },
   {
     "name": "Denmark",
@@ -549,7 +798,11 @@
     "lat": 55.68,
     "lng": 12.57,
     "gdp_per_capita": 67800,
-    "capital_population": 794000
+    "capital_population": 794000,
+    "neighbors": [
+      "Germany",
+      "Sweden"
+    ]
   },
   {
     "name": "Djibouti",
@@ -561,7 +814,12 @@
     "lat": 11.59,
     "lng": 43.15,
     "gdp_per_capita": 3350,
-    "capital_population": 624000
+    "capital_population": 624000,
+    "neighbors": [
+      "Eritrea",
+      "Ethiopia",
+      "Somalia"
+    ]
   },
   {
     "name": "Dominica",
@@ -570,10 +828,11 @@
     "area": 751,
     "continent": "North America",
     "flag": "dm",
-    "lat": 15.30,
+    "lat": 15.3,
     "lng": -61.39,
     "gdp_per_capita": 8500,
-    "capital_population": 16000
+    "capital_population": 16000,
+    "neighbors": []
   },
   {
     "name": "Dominican Republic",
@@ -583,9 +842,12 @@
     "continent": "North America",
     "flag": "do",
     "lat": 18.48,
-    "lng": -69.90,
+    "lng": -69.9,
     "gdp_per_capita": 9590,
-    "capital_population": 3311000
+    "capital_population": 3311000,
+    "neighbors": [
+      "Haiti"
+    ]
   },
   {
     "name": "Ecuador",
@@ -597,7 +859,11 @@
     "lat": -0.22,
     "lng": -78.51,
     "gdp_per_capita": 6450,
-    "capital_population": 2011000
+    "capital_population": 2011000,
+    "neighbors": [
+      "Colombia",
+      "Peru"
+    ]
   },
   {
     "name": "Egypt",
@@ -609,7 +875,13 @@
     "lat": 30.04,
     "lng": 31.24,
     "gdp_per_capita": 4290,
-    "capital_population": 10107000
+    "capital_population": 10107000,
+    "neighbors": [
+      "Libya",
+      "Sudan",
+      "Israel",
+      "Palestine"
+    ]
   },
   {
     "name": "El Salvador",
@@ -621,7 +893,11 @@
     "lat": 13.69,
     "lng": -89.19,
     "gdp_per_capita": 4310,
-    "capital_population": 570000
+    "capital_population": 570000,
+    "neighbors": [
+      "Guatemala",
+      "Honduras"
+    ]
   },
   {
     "name": "Equatorial Guinea",
@@ -633,7 +909,11 @@
     "lat": 3.75,
     "lng": 8.78,
     "gdp_per_capita": 7270,
-    "capital_population": 237000
+    "capital_population": 237000,
+    "neighbors": [
+      "Cameroon",
+      "Gabon"
+    ]
   },
   {
     "name": "Eritrea",
@@ -645,7 +925,12 @@
     "lat": 15.34,
     "lng": 38.93,
     "gdp_per_capita": 670,
-    "capital_population": 963000
+    "capital_population": 963000,
+    "neighbors": [
+      "Sudan",
+      "Ethiopia",
+      "Djibouti"
+    ]
   },
   {
     "name": "Eswatini",
@@ -657,7 +942,11 @@
     "lat": -26.32,
     "lng": 31.14,
     "gdp_per_capita": 4280,
-    "capital_population": 68000
+    "capital_population": 68000,
+    "neighbors": [
+      "South Africa",
+      "Mozambique"
+    ]
   },
   {
     "name": "Ethiopia",
@@ -669,7 +958,15 @@
     "lat": 9.02,
     "lng": 38.75,
     "gdp_per_capita": 1020,
-    "capital_population": 5461000
+    "capital_population": 5461000,
+    "neighbors": [
+      "Eritrea",
+      "Djibouti",
+      "Somalia",
+      "Kenya",
+      "South Sudan",
+      "Sudan"
+    ]
   },
   {
     "name": "Fiji",
@@ -681,7 +978,8 @@
     "lat": -18.14,
     "lng": 178.44,
     "gdp_per_capita": 5100,
-    "capital_population": 93000
+    "capital_population": 93000,
+    "neighbors": []
   },
   {
     "name": "Finland",
@@ -693,7 +991,12 @@
     "lat": 60.17,
     "lng": 24.94,
     "gdp_per_capita": 53660,
-    "capital_population": 660000
+    "capital_population": 660000,
+    "neighbors": [
+      "Sweden",
+      "Norway",
+      "Russia"
+    ]
   },
   {
     "name": "France",
@@ -705,7 +1008,17 @@
     "lat": 48.86,
     "lng": 2.35,
     "gdp_per_capita": 44410,
-    "capital_population": 2148000
+    "capital_population": 2148000,
+    "neighbors": [
+      "Belgium",
+      "Luxembourg",
+      "Germany",
+      "Switzerland",
+      "Italy",
+      "Spain",
+      "Monaco",
+      "Andorra"
+    ]
   },
   {
     "name": "Gabon",
@@ -717,7 +1030,12 @@
     "lat": 0.39,
     "lng": 9.45,
     "gdp_per_capita": 8380,
-    "capital_population": 870000
+    "capital_population": 870000,
+    "neighbors": [
+      "Cameroon",
+      "Congo",
+      "Equatorial Guinea"
+    ]
   },
   {
     "name": "Gambia",
@@ -729,7 +1047,10 @@
     "lat": 13.45,
     "lng": -16.58,
     "gdp_per_capita": 790,
-    "capital_population": 33000
+    "capital_population": 33000,
+    "neighbors": [
+      "Senegal"
+    ]
   },
   {
     "name": "Georgia",
@@ -741,7 +1062,13 @@
     "lat": 41.69,
     "lng": 44.83,
     "gdp_per_capita": 6040,
-    "capital_population": 1171000
+    "capital_population": 1171000,
+    "neighbors": [
+      "Russia",
+      "Turkey",
+      "Armenia",
+      "Azerbaijan"
+    ]
   },
   {
     "name": "Germany",
@@ -753,7 +1080,18 @@
     "lat": 52.52,
     "lng": 13.41,
     "gdp_per_capita": 51380,
-    "capital_population": 3677000
+    "capital_population": 3677000,
+    "neighbors": [
+      "France",
+      "Belgium",
+      "Netherlands",
+      "Luxembourg",
+      "Denmark",
+      "Poland",
+      "Czech Republic",
+      "Austria",
+      "Switzerland"
+    ]
   },
   {
     "name": "Ghana",
@@ -765,7 +1103,12 @@
     "lat": 5.56,
     "lng": -0.19,
     "gdp_per_capita": 2360,
-    "capital_population": 3630000
+    "capital_population": 3630000,
+    "neighbors": [
+      "Ivory Coast",
+      "Burkina Faso",
+      "Togo"
+    ]
   },
   {
     "name": "Greece",
@@ -777,7 +1120,13 @@
     "lat": 37.98,
     "lng": 23.73,
     "gdp_per_capita": 20960,
-    "capital_population": 3154000
+    "capital_population": 3154000,
+    "neighbors": [
+      "Albania",
+      "North Macedonia",
+      "Bulgaria",
+      "Turkey"
+    ]
   },
   {
     "name": "Grenada",
@@ -789,7 +1138,8 @@
     "lat": 12.05,
     "lng": -61.75,
     "gdp_per_capita": 10430,
-    "capital_population": 37000
+    "capital_population": 37000,
+    "neighbors": []
   },
   {
     "name": "Guatemala",
@@ -801,7 +1151,13 @@
     "lat": 14.64,
     "lng": -90.51,
     "gdp_per_capita": 5070,
-    "capital_population": 2934000
+    "capital_population": 2934000,
+    "neighbors": [
+      "Mexico",
+      "Belize",
+      "Honduras",
+      "El Salvador"
+    ]
   },
   {
     "name": "Guinea",
@@ -813,7 +1169,15 @@
     "lat": 9.54,
     "lng": -13.68,
     "gdp_per_capita": 1100,
-    "capital_population": 2370000
+    "capital_population": 2370000,
+    "neighbors": [
+      "Senegal",
+      "Guinea-Bissau",
+      "Sierra Leone",
+      "Liberia",
+      "Ivory Coast",
+      "Mali"
+    ]
   },
   {
     "name": "Guinea-Bissau",
@@ -823,9 +1187,13 @@
     "continent": "Africa",
     "flag": "gw",
     "lat": 11.86,
-    "lng": -15.60,
+    "lng": -15.6,
     "gdp_per_capita": 750,
-    "capital_population": 607000
+    "capital_population": 607000,
+    "neighbors": [
+      "Senegal",
+      "Guinea"
+    ]
   },
   {
     "name": "Guyana",
@@ -834,10 +1202,15 @@
     "area": 214969,
     "continent": "South America",
     "flag": "gy",
-    "lat": 6.80,
+    "lat": 6.8,
     "lng": -58.16,
     "gdp_per_capita": 9430,
-    "capital_population": 235000
+    "capital_population": 235000,
+    "neighbors": [
+      "Venezuela",
+      "Brazil",
+      "Suriname"
+    ]
   },
   {
     "name": "Haiti",
@@ -849,7 +1222,10 @@
     "lat": 18.54,
     "lng": -72.34,
     "gdp_per_capita": 1440,
-    "capital_population": 2773000
+    "capital_population": 2773000,
+    "neighbors": [
+      "Dominican Republic"
+    ]
   },
   {
     "name": "Honduras",
@@ -858,10 +1234,15 @@
     "area": 112492,
     "continent": "North America",
     "flag": "hn",
-    "lat": 14.10,
+    "lat": 14.1,
     "lng": -87.21,
     "gdp_per_capita": 2800,
-    "capital_population": 1449000
+    "capital_population": 1449000,
+    "neighbors": [
+      "Guatemala",
+      "El Salvador",
+      "Nicaragua"
+    ]
   },
   {
     "name": "Hungary",
@@ -870,10 +1251,19 @@
     "area": 93028,
     "continent": "Europe",
     "flag": "hu",
-    "lat": 47.50,
+    "lat": 47.5,
     "lng": 19.04,
     "gdp_per_capita": 18770,
-    "capital_population": 1775000
+    "capital_population": 1775000,
+    "neighbors": [
+      "Austria",
+      "Slovakia",
+      "Ukraine",
+      "Romania",
+      "Serbia",
+      "Croatia",
+      "Slovenia"
+    ]
   },
   {
     "name": "Iceland",
@@ -885,7 +1275,8 @@
     "lat": 64.15,
     "lng": -21.94,
     "gdp_per_capita": 73470,
-    "capital_population": 139000
+    "capital_population": 139000,
+    "neighbors": []
   },
   {
     "name": "India",
@@ -897,7 +1288,15 @@
     "lat": 28.61,
     "lng": 77.21,
     "gdp_per_capita": 2410,
-    "capital_population": 33807000
+    "capital_population": 33807000,
+    "neighbors": [
+      "Pakistan",
+      "China",
+      "Nepal",
+      "Bhutan",
+      "Bangladesh",
+      "Myanmar"
+    ]
   },
   {
     "name": "Indonesia",
@@ -909,7 +1308,12 @@
     "lat": -6.21,
     "lng": 106.85,
     "gdp_per_capita": 4790,
-    "capital_population": 10770000
+    "capital_population": 10770000,
+    "neighbors": [
+      "Papua New Guinea",
+      "Timor-Leste",
+      "Malaysia"
+    ]
   },
   {
     "name": "Iran",
@@ -921,7 +1325,16 @@
     "lat": 35.69,
     "lng": 51.39,
     "gdp_per_capita": 4100,
-    "capital_population": 9259000
+    "capital_population": 9259000,
+    "neighbors": [
+      "Turkey",
+      "Iraq",
+      "Azerbaijan",
+      "Armenia",
+      "Turkmenistan",
+      "Afghanistan",
+      "Pakistan"
+    ]
   },
   {
     "name": "Iraq",
@@ -933,7 +1346,15 @@
     "lat": 33.34,
     "lng": 44.37,
     "gdp_per_capita": 5040,
-    "capital_population": 8126000
+    "capital_population": 8126000,
+    "neighbors": [
+      "Turkey",
+      "Syria",
+      "Jordan",
+      "Saudi Arabia",
+      "Kuwait",
+      "Iran"
+    ]
   },
   {
     "name": "Ireland",
@@ -945,7 +1366,10 @@
     "lat": 53.35,
     "lng": -6.26,
     "gdp_per_capita": 100170,
-    "capital_population": 1173000
+    "capital_population": 1173000,
+    "neighbors": [
+      "United Kingdom"
+    ]
   },
   {
     "name": "Israel",
@@ -957,7 +1381,14 @@
     "lat": 31.77,
     "lng": 35.22,
     "gdp_per_capita": 54930,
-    "capital_population": 974000
+    "capital_population": 974000,
+    "neighbors": [
+      "Lebanon",
+      "Syria",
+      "Jordan",
+      "Egypt",
+      "Palestine"
+    ]
   },
   {
     "name": "Italy",
@@ -966,10 +1397,18 @@
     "area": 301340,
     "continent": "Europe",
     "flag": "it",
-    "lat": 41.90,
-    "lng": 12.50,
+    "lat": 41.9,
+    "lng": 12.5,
     "gdp_per_capita": 34780,
-    "capital_population": 2873000
+    "capital_population": 2873000,
+    "neighbors": [
+      "France",
+      "Switzerland",
+      "Austria",
+      "Slovenia",
+      "San Marino",
+      "Vatican City"
+    ]
   },
   {
     "name": "Ivory Coast",
@@ -981,7 +1420,14 @@
     "lat": 6.82,
     "lng": -5.28,
     "gdp_per_capita": 2490,
-    "capital_population": 230000
+    "capital_population": 230000,
+    "neighbors": [
+      "Guinea",
+      "Liberia",
+      "Ghana",
+      "Burkina Faso",
+      "Mali"
+    ]
   },
   {
     "name": "Jamaica",
@@ -990,10 +1436,11 @@
     "area": 10991,
     "continent": "North America",
     "flag": "jm",
-    "lat": 18.00,
-    "lng": -76.80,
+    "lat": 18,
+    "lng": -76.8,
     "gdp_per_capita": 5580,
-    "capital_population": 590000
+    "capital_population": 590000,
+    "neighbors": []
   },
   {
     "name": "Japan",
@@ -1005,7 +1452,8 @@
     "lat": 35.68,
     "lng": 139.69,
     "gdp_per_capita": 33820,
-    "capital_population": 13960000
+    "capital_population": 13960000,
+    "neighbors": []
   },
   {
     "name": "Jordan",
@@ -1017,7 +1465,14 @@
     "lat": 31.95,
     "lng": 35.93,
     "gdp_per_capita": 4400,
-    "capital_population": 4061000
+    "capital_population": 4061000,
+    "neighbors": [
+      "Israel",
+      "Palestine",
+      "Syria",
+      "Iraq",
+      "Saudi Arabia"
+    ]
   },
   {
     "name": "Kazakhstan",
@@ -1029,7 +1484,14 @@
     "lat": 51.16,
     "lng": 71.45,
     "gdp_per_capita": 11560,
-    "capital_population": 1250000
+    "capital_population": 1250000,
+    "neighbors": [
+      "Russia",
+      "China",
+      "Kyrgyzstan",
+      "Uzbekistan",
+      "Turkmenistan"
+    ]
   },
   {
     "name": "Kenya",
@@ -1041,7 +1503,14 @@
     "lat": -1.29,
     "lng": 36.82,
     "gdp_per_capita": 2100,
-    "capital_population": 4922000
+    "capital_population": 4922000,
+    "neighbors": [
+      "Uganda",
+      "Tanzania",
+      "South Sudan",
+      "Ethiopia",
+      "Somalia"
+    ]
   },
   {
     "name": "Kiribati",
@@ -1053,7 +1522,8 @@
     "lat": 1.33,
     "lng": 173.02,
     "gdp_per_capita": 1770,
-    "capital_population": 64000
+    "capital_population": 64000,
+    "neighbors": []
   },
   {
     "name": "Kosovo",
@@ -1065,7 +1535,13 @@
     "lat": 42.67,
     "lng": 21.17,
     "gdp_per_capita": 5290,
-    "capital_population": 210000
+    "capital_population": 210000,
+    "neighbors": [
+      "Serbia",
+      "North Macedonia",
+      "Albania",
+      "Montenegro"
+    ]
   },
   {
     "name": "Kuwait",
@@ -1077,7 +1553,11 @@
     "lat": 29.37,
     "lng": 47.98,
     "gdp_per_capita": 32930,
-    "capital_population": 3115000
+    "capital_population": 3115000,
+    "neighbors": [
+      "Saudi Arabia",
+      "Iraq"
+    ]
   },
   {
     "name": "Kyrgyzstan",
@@ -1089,7 +1569,13 @@
     "lat": 42.87,
     "lng": 74.59,
     "gdp_per_capita": 1310,
-    "capital_population": 1074000
+    "capital_population": 1074000,
+    "neighbors": [
+      "Kazakhstan",
+      "China",
+      "Tajikistan",
+      "Uzbekistan"
+    ]
   },
   {
     "name": "Laos",
@@ -1099,9 +1585,16 @@
     "continent": "Asia",
     "flag": "la",
     "lat": 17.97,
-    "lng": 102.60,
+    "lng": 102.6,
     "gdp_per_capita": 2640,
-    "capital_population": 948000
+    "capital_population": 948000,
+    "neighbors": [
+      "China",
+      "Vietnam",
+      "Cambodia",
+      "Thailand",
+      "Myanmar"
+    ]
   },
   {
     "name": "Latvia",
@@ -1113,7 +1606,12 @@
     "lat": 56.95,
     "lng": 24.11,
     "gdp_per_capita": 20230,
-    "capital_population": 632000
+    "capital_population": 632000,
+    "neighbors": [
+      "Lithuania",
+      "Belarus",
+      "Russia"
+    ]
   },
   {
     "name": "Lebanon",
@@ -1123,9 +1621,13 @@
     "continent": "Asia",
     "flag": "lb",
     "lat": 33.89,
-    "lng": 35.50,
+    "lng": 35.5,
     "gdp_per_capita": 3920,
-    "capital_population": 2435000
+    "capital_population": 2435000,
+    "neighbors": [
+      "Israel",
+      "Syria"
+    ]
   },
   {
     "name": "Lesotho",
@@ -1137,7 +1639,10 @@
     "lat": -29.31,
     "lng": 27.48,
     "gdp_per_capita": 1040,
-    "capital_population": 365000
+    "capital_population": 365000,
+    "neighbors": [
+      "South Africa"
+    ]
   },
   {
     "name": "Liberia",
@@ -1146,10 +1651,15 @@
     "area": 111369,
     "continent": "Africa",
     "flag": "lr",
-    "lat": 6.30,
-    "lng": -10.80,
+    "lat": 6.3,
+    "lng": -10.8,
     "gdp_per_capita": 700,
-    "capital_population": 1623000
+    "capital_population": 1623000,
+    "neighbors": [
+      "Guinea",
+      "Sierra Leone",
+      "Ivory Coast"
+    ]
   },
   {
     "name": "Libya",
@@ -1158,10 +1668,18 @@
     "area": 1759541,
     "continent": "Africa",
     "flag": "ly",
-    "lat": 32.90,
+    "lat": 32.9,
     "lng": 13.18,
     "gdp_per_capita": 7310,
-    "capital_population": 1293000
+    "capital_population": 1293000,
+    "neighbors": [
+      "Tunisia",
+      "Algeria",
+      "Niger",
+      "Chad",
+      "Sudan",
+      "Egypt"
+    ]
   },
   {
     "name": "Liechtenstein",
@@ -1173,7 +1691,11 @@
     "lat": 47.14,
     "lng": 9.52,
     "gdp_per_capita": 178160,
-    "capital_population": 5800
+    "capital_population": 5800,
+    "neighbors": [
+      "Switzerland",
+      "Austria"
+    ]
   },
   {
     "name": "Lithuania",
@@ -1185,7 +1707,13 @@
     "lat": 54.69,
     "lng": 25.28,
     "gdp_per_capita": 24310,
-    "capital_population": 590000
+    "capital_population": 590000,
+    "neighbors": [
+      "Latvia",
+      "Belarus",
+      "Russia",
+      "Poland"
+    ]
   },
   {
     "name": "Luxembourg",
@@ -1197,7 +1725,12 @@
     "lat": 49.61,
     "lng": 6.13,
     "gdp_per_capita": 135680,
-    "capital_population": 130000
+    "capital_population": 130000,
+    "neighbors": [
+      "Belgium",
+      "France",
+      "Germany"
+    ]
   },
   {
     "name": "Madagascar",
@@ -1209,7 +1742,8 @@
     "lat": -18.91,
     "lng": 47.54,
     "gdp_per_capita": 520,
-    "capital_population": 3562000
+    "capital_population": 3562000,
+    "neighbors": []
   },
   {
     "name": "Malawi",
@@ -1221,7 +1755,12 @@
     "lat": -13.97,
     "lng": 33.79,
     "gdp_per_capita": 640,
-    "capital_population": 1077000
+    "capital_population": 1077000,
+    "neighbors": [
+      "Tanzania",
+      "Zambia",
+      "Mozambique"
+    ]
   },
   {
     "name": "Malaysia",
@@ -1233,7 +1772,12 @@
     "lat": 3.14,
     "lng": 101.69,
     "gdp_per_capita": 12570,
-    "capital_population": 1982000
+    "capital_population": 1982000,
+    "neighbors": [
+      "Thailand",
+      "Indonesia",
+      "Brunei"
+    ]
   },
   {
     "name": "Maldives",
@@ -1245,7 +1789,8 @@
     "lat": 4.17,
     "lng": 73.51,
     "gdp_per_capita": 9840,
-    "capital_population": 177000
+    "capital_population": 177000,
+    "neighbors": []
   },
   {
     "name": "Mali",
@@ -1255,9 +1800,18 @@
     "continent": "Africa",
     "flag": "ml",
     "lat": 12.65,
-    "lng": -8.00,
+    "lng": -8,
     "gdp_per_capita": 880,
-    "capital_population": 3660000
+    "capital_population": 3660000,
+    "neighbors": [
+      "Mauritania",
+      "Algeria",
+      "Niger",
+      "Burkina Faso",
+      "Ivory Coast",
+      "Guinea",
+      "Senegal"
+    ]
   },
   {
     "name": "Malta",
@@ -1266,10 +1820,11 @@
     "area": 316,
     "continent": "Europe",
     "flag": "mt",
-    "lat": 35.90,
+    "lat": 35.9,
     "lng": 14.51,
     "gdp_per_capita": 32680,
-    "capital_population": 6300
+    "capital_population": 6300,
+    "neighbors": []
   },
   {
     "name": "Marshall Islands",
@@ -1281,7 +1836,8 @@
     "lat": 7.09,
     "lng": 171.38,
     "gdp_per_capita": 4990,
-    "capital_population": 28000
+    "capital_population": 28000,
+    "neighbors": []
   },
   {
     "name": "Mauritania",
@@ -1293,7 +1849,13 @@
     "lat": 18.08,
     "lng": -15.97,
     "gdp_per_capita": 1910,
-    "capital_population": 1337000
+    "capital_population": 1337000,
+    "neighbors": [
+      "Morocco",
+      "Algeria",
+      "Mali",
+      "Senegal"
+    ]
   },
   {
     "name": "Mauritius",
@@ -1303,9 +1865,10 @@
     "continent": "Africa",
     "flag": "mu",
     "lat": -20.16,
-    "lng": 57.50,
+    "lng": 57.5,
     "gdp_per_capita": 10030,
-    "capital_population": 149000
+    "capital_population": 149000,
+    "neighbors": []
   },
   {
     "name": "Mexico",
@@ -1317,7 +1880,12 @@
     "lat": 19.43,
     "lng": -99.13,
     "gdp_per_capita": 10950,
-    "capital_population": 9209000
+    "capital_population": 9209000,
+    "neighbors": [
+      "United States",
+      "Guatemala",
+      "Belize"
+    ]
   },
   {
     "name": "Micronesia",
@@ -1329,7 +1897,8 @@
     "lat": 6.92,
     "lng": 158.19,
     "gdp_per_capita": 3660,
-    "capital_population": 7000
+    "capital_population": 7000,
+    "neighbors": []
   },
   {
     "name": "Moldova",
@@ -1341,7 +1910,11 @@
     "lat": 47.01,
     "lng": 28.86,
     "gdp_per_capita": 5490,
-    "capital_population": 532000
+    "capital_population": 532000,
+    "neighbors": [
+      "Romania",
+      "Ukraine"
+    ]
   },
   {
     "name": "Monaco",
@@ -1353,7 +1926,10 @@
     "lat": 43.73,
     "lng": 7.42,
     "gdp_per_capita": 185740,
-    "capital_population": 36000
+    "capital_population": 36000,
+    "neighbors": [
+      "France"
+    ]
   },
   {
     "name": "Mongolia",
@@ -1365,7 +1941,11 @@
     "lat": 47.91,
     "lng": 106.88,
     "gdp_per_capita": 4250,
-    "capital_population": 1672000
+    "capital_population": 1672000,
+    "neighbors": [
+      "Russia",
+      "China"
+    ]
   },
   {
     "name": "Montenegro",
@@ -1377,7 +1957,14 @@
     "lat": 42.44,
     "lng": 19.26,
     "gdp_per_capita": 9860,
-    "capital_population": 177000
+    "capital_population": 177000,
+    "neighbors": [
+      "Croatia",
+      "Bosnia and Herzegovina",
+      "Serbia",
+      "Kosovo",
+      "Albania"
+    ]
   },
   {
     "name": "Morocco",
@@ -1389,7 +1976,12 @@
     "lat": 34.02,
     "lng": -6.84,
     "gdp_per_capita": 3640,
-    "capital_population": 1932000
+    "capital_population": 1932000,
+    "neighbors": [
+      "Algeria",
+      "Mauritania",
+      "Spain"
+    ]
   },
   {
     "name": "Mozambique",
@@ -1401,7 +1993,15 @@
     "lat": -25.97,
     "lng": 32.57,
     "gdp_per_capita": 530,
-    "capital_population": 1120000
+    "capital_population": 1120000,
+    "neighbors": [
+      "Tanzania",
+      "Malawi",
+      "Zambia",
+      "Zimbabwe",
+      "South Africa",
+      "Eswatini"
+    ]
   },
   {
     "name": "Myanmar",
@@ -1413,7 +2013,14 @@
     "lat": 19.77,
     "lng": 96.16,
     "gdp_per_capita": 1210,
-    "capital_population": 1160000
+    "capital_population": 1160000,
+    "neighbors": [
+      "India",
+      "China",
+      "Laos",
+      "Thailand",
+      "Bangladesh"
+    ]
   },
   {
     "name": "Namibia",
@@ -1425,7 +2032,13 @@
     "lat": -22.56,
     "lng": 17.08,
     "gdp_per_capita": 5220,
-    "capital_population": 477000
+    "capital_population": 477000,
+    "neighbors": [
+      "Angola",
+      "Zambia",
+      "Botswana",
+      "South Africa"
+    ]
   },
   {
     "name": "Nauru",
@@ -1437,7 +2050,8 @@
     "lat": -0.55,
     "lng": 166.92,
     "gdp_per_capita": 10430,
-    "capital_population": 1100
+    "capital_population": 1100,
+    "neighbors": []
   },
   {
     "name": "Nepal",
@@ -1446,10 +2060,14 @@
     "area": 147181,
     "continent": "Asia",
     "flag": "np",
-    "lat": 27.70,
+    "lat": 27.7,
     "lng": 85.32,
     "gdp_per_capita": 1330,
-    "capital_population": 1442000
+    "capital_population": 1442000,
+    "neighbors": [
+      "India",
+      "China"
+    ]
   },
   {
     "name": "Netherlands",
@@ -1461,7 +2079,11 @@
     "lat": 52.37,
     "lng": 4.89,
     "gdp_per_capita": 57430,
-    "capital_population": 921000
+    "capital_population": 921000,
+    "neighbors": [
+      "Germany",
+      "Belgium"
+    ]
   },
   {
     "name": "New Zealand",
@@ -1473,7 +2095,8 @@
     "lat": -41.29,
     "lng": 174.78,
     "gdp_per_capita": 48780,
-    "capital_population": 215000
+    "capital_population": 215000,
+    "neighbors": []
   },
   {
     "name": "Nicaragua",
@@ -1485,7 +2108,11 @@
     "lat": 12.13,
     "lng": -86.29,
     "gdp_per_capita": 2060,
-    "capital_population": 1055000
+    "capital_population": 1055000,
+    "neighbors": [
+      "Honduras",
+      "Costa Rica"
+    ]
   },
   {
     "name": "Niger",
@@ -1497,7 +2124,16 @@
     "lat": 13.51,
     "lng": 2.12,
     "gdp_per_capita": 590,
-    "capital_population": 1361000
+    "capital_population": 1361000,
+    "neighbors": [
+      "Algeria",
+      "Libya",
+      "Chad",
+      "Nigeria",
+      "Benin",
+      "Burkina Faso",
+      "Mali"
+    ]
   },
   {
     "name": "Nigeria",
@@ -1509,7 +2145,13 @@
     "lat": 9.06,
     "lng": 7.49,
     "gdp_per_capita": 2180,
-    "capital_population": 3840000
+    "capital_population": 3840000,
+    "neighbors": [
+      "Benin",
+      "Niger",
+      "Chad",
+      "Cameroon"
+    ]
   },
   {
     "name": "North Korea",
@@ -1521,7 +2163,12 @@
     "lat": 39.02,
     "lng": 125.75,
     "gdp_per_capita": 640,
-    "capital_population": 3255000
+    "capital_population": 3255000,
+    "neighbors": [
+      "China",
+      "Russia",
+      "South Korea"
+    ]
   },
   {
     "name": "North Macedonia",
@@ -1530,10 +2177,17 @@
     "area": 25713,
     "continent": "Europe",
     "flag": "mk",
-    "lat": 42.00,
+    "lat": 42,
     "lng": 21.43,
     "gdp_per_capita": 6310,
-    "capital_population": 590000
+    "capital_population": 590000,
+    "neighbors": [
+      "Bulgaria",
+      "Greece",
+      "Albania",
+      "Kosovo",
+      "Serbia"
+    ]
   },
   {
     "name": "Norway",
@@ -1545,7 +2199,12 @@
     "lat": 59.91,
     "lng": 10.75,
     "gdp_per_capita": 87930,
-    "capital_population": 703000
+    "capital_population": 703000,
+    "neighbors": [
+      "Sweden",
+      "Finland",
+      "Russia"
+    ]
   },
   {
     "name": "Oman",
@@ -1557,7 +2216,12 @@
     "lat": 23.61,
     "lng": 58.59,
     "gdp_per_capita": 20030,
-    "capital_population": 1590000
+    "capital_population": 1590000,
+    "neighbors": [
+      "Saudi Arabia",
+      "United Arab Emirates",
+      "Yemen"
+    ]
   },
   {
     "name": "Pakistan",
@@ -1569,7 +2233,13 @@
     "lat": 33.69,
     "lng": 73.04,
     "gdp_per_capita": 1580,
-    "capital_population": 1147000
+    "capital_population": 1147000,
+    "neighbors": [
+      "Iran",
+      "Afghanistan",
+      "China",
+      "India"
+    ]
   },
   {
     "name": "Palau",
@@ -1578,10 +2248,11 @@
     "area": 459,
     "continent": "Oceania",
     "flag": "pw",
-    "lat": 7.50,
+    "lat": 7.5,
     "lng": 134.62,
     "gdp_per_capita": 12870,
-    "capital_population": 391
+    "capital_population": 391,
+    "neighbors": []
   },
   {
     "name": "Palestine",
@@ -1590,10 +2261,15 @@
     "area": 6020,
     "continent": "Asia",
     "flag": "ps",
-    "lat": 31.90,
+    "lat": 31.9,
     "lng": 35.21,
     "gdp_per_capita": 3530,
-    "capital_population": 82000
+    "capital_population": 82000,
+    "neighbors": [
+      "Israel",
+      "Jordan",
+      "Egypt"
+    ]
   },
   {
     "name": "Panama",
@@ -1605,7 +2281,11 @@
     "lat": 8.99,
     "lng": -79.52,
     "gdp_per_capita": 15460,
-    "capital_population": 882000
+    "capital_population": 882000,
+    "neighbors": [
+      "Colombia",
+      "Costa Rica"
+    ]
   },
   {
     "name": "Papua New Guinea",
@@ -1617,7 +2297,10 @@
     "lat": -9.44,
     "lng": 147.18,
     "gdp_per_capita": 2970,
-    "capital_population": 405000
+    "capital_population": 405000,
+    "neighbors": [
+      "Indonesia"
+    ]
   },
   {
     "name": "Paraguay",
@@ -1629,7 +2312,12 @@
     "lat": -25.29,
     "lng": -57.65,
     "gdp_per_capita": 5870,
-    "capital_population": 525000
+    "capital_population": 525000,
+    "neighbors": [
+      "Bolivia",
+      "Argentina",
+      "Brazil"
+    ]
   },
   {
     "name": "Peru",
@@ -1641,7 +2329,14 @@
     "lat": -12.05,
     "lng": -77.04,
     "gdp_per_capita": 7130,
-    "capital_population": 10555000
+    "capital_population": 10555000,
+    "neighbors": [
+      "Ecuador",
+      "Colombia",
+      "Brazil",
+      "Bolivia",
+      "Chile"
+    ]
   },
   {
     "name": "Philippines",
@@ -1650,10 +2345,11 @@
     "area": 300000,
     "continent": "Asia",
     "flag": "ph",
-    "lat": 14.60,
+    "lat": 14.6,
     "lng": 120.98,
     "gdp_per_capita": 3950,
-    "capital_population": 1846000
+    "capital_population": 1846000,
+    "neighbors": []
   },
   {
     "name": "Poland",
@@ -1665,7 +2361,16 @@
     "lat": 52.23,
     "lng": 21.01,
     "gdp_per_capita": 18320,
-    "capital_population": 1861000
+    "capital_population": 1861000,
+    "neighbors": [
+      "Germany",
+      "Czech Republic",
+      "Slovakia",
+      "Ukraine",
+      "Belarus",
+      "Lithuania",
+      "Russia"
+    ]
   },
   {
     "name": "Portugal",
@@ -1677,7 +2382,10 @@
     "lat": 38.72,
     "lng": -9.14,
     "gdp_per_capita": 25470,
-    "capital_population": 504000
+    "capital_population": 504000,
+    "neighbors": [
+      "Spain"
+    ]
   },
   {
     "name": "Qatar",
@@ -1689,7 +2397,10 @@
     "lat": 25.29,
     "lng": 51.53,
     "gdp_per_capita": 87660,
-    "capital_population": 2382000
+    "capital_population": 2382000,
+    "neighbors": [
+      "Saudi Arabia"
+    ]
   },
   {
     "name": "Romania",
@@ -1699,9 +2410,16 @@
     "continent": "Europe",
     "flag": "ro",
     "lat": 44.43,
-    "lng": 26.10,
+    "lng": 26.1,
     "gdp_per_capita": 15790,
-    "capital_population": 1716000
+    "capital_population": 1716000,
+    "neighbors": [
+      "Ukraine",
+      "Moldova",
+      "Bulgaria",
+      "Serbia",
+      "Hungary"
+    ]
   },
   {
     "name": "Russia",
@@ -1713,7 +2431,22 @@
     "lat": 55.76,
     "lng": 37.62,
     "gdp_per_capita": 12200,
-    "capital_population": 12506000
+    "capital_population": 12506000,
+    "neighbors": [
+      "Norway",
+      "Finland",
+      "Latvia",
+      "Lithuania",
+      "Belarus",
+      "Ukraine",
+      "Georgia",
+      "Azerbaijan",
+      "Kazakhstan",
+      "China",
+      "Mongolia",
+      "North Korea",
+      "Poland"
+    ]
   },
   {
     "name": "Rwanda",
@@ -1725,7 +2458,13 @@
     "lat": -1.94,
     "lng": 30.06,
     "gdp_per_capita": 930,
-    "capital_population": 1462000
+    "capital_population": 1462000,
+    "neighbors": [
+      "Uganda",
+      "Tanzania",
+      "Burundi",
+      "DR Congo"
+    ]
   },
   {
     "name": "Saint Kitts and Nevis",
@@ -1734,10 +2473,11 @@
     "area": 261,
     "continent": "North America",
     "flag": "kn",
-    "lat": 17.30,
+    "lat": 17.3,
     "lng": -62.72,
     "gdp_per_capita": 18200,
-    "capital_population": 13000
+    "capital_population": 13000,
+    "neighbors": []
   },
   {
     "name": "Saint Lucia",
@@ -1747,9 +2487,10 @@
     "continent": "North America",
     "flag": "lc",
     "lat": 14.01,
-    "lng": -61.00,
+    "lng": -61,
     "gdp_per_capita": 11130,
-    "capital_population": 22000
+    "capital_population": 22000,
+    "neighbors": []
   },
   {
     "name": "Saint Vincent and the Grenadines",
@@ -1761,7 +2502,8 @@
     "lat": 13.16,
     "lng": -61.23,
     "gdp_per_capita": 8510,
-    "capital_population": 19000
+    "capital_population": 19000,
+    "neighbors": []
   },
   {
     "name": "Samoa",
@@ -1773,7 +2515,8 @@
     "lat": -13.83,
     "lng": -171.77,
     "gdp_per_capita": 4220,
-    "capital_population": 36000
+    "capital_population": 36000,
+    "neighbors": []
   },
   {
     "name": "San Marino",
@@ -1785,7 +2528,10 @@
     "lat": 43.94,
     "lng": 12.45,
     "gdp_per_capita": 48490,
-    "capital_population": 4000
+    "capital_population": 4000,
+    "neighbors": [
+      "Italy"
+    ]
   },
   {
     "name": "São Tomé and Príncipe",
@@ -1797,7 +2543,8 @@
     "lat": 0.34,
     "lng": 6.73,
     "gdp_per_capita": 2250,
-    "capital_population": 87000
+    "capital_population": 87000,
+    "neighbors": []
   },
   {
     "name": "Saudi Arabia",
@@ -1809,7 +2556,16 @@
     "lat": 24.69,
     "lng": 46.72,
     "gdp_per_capita": 27680,
-    "capital_population": 7676000
+    "capital_population": 7676000,
+    "neighbors": [
+      "Jordan",
+      "Iraq",
+      "Kuwait",
+      "United Arab Emirates",
+      "Qatar",
+      "Oman",
+      "Yemen"
+    ]
   },
   {
     "name": "Senegal",
@@ -1821,7 +2577,14 @@
     "lat": 14.69,
     "lng": -17.45,
     "gdp_per_capita": 1680,
-    "capital_population": 3732000
+    "capital_population": 3732000,
+    "neighbors": [
+      "Mauritania",
+      "Mali",
+      "Guinea",
+      "Guinea-Bissau",
+      "Gambia"
+    ]
   },
   {
     "name": "Serbia",
@@ -1830,10 +2593,20 @@
     "area": 77474,
     "continent": "Europe",
     "flag": "rs",
-    "lat": 44.80,
+    "lat": 44.8,
     "lng": 20.46,
     "gdp_per_capita": 9620,
-    "capital_population": 1694000
+    "capital_population": 1694000,
+    "neighbors": [
+      "Hungary",
+      "Romania",
+      "Bulgaria",
+      "North Macedonia",
+      "Kosovo",
+      "Montenegro",
+      "Bosnia and Herzegovina",
+      "Croatia"
+    ]
   },
   {
     "name": "Sierra Leone",
@@ -1845,7 +2618,11 @@
     "lat": 8.49,
     "lng": -13.23,
     "gdp_per_capita": 510,
-    "capital_population": 1236000
+    "capital_population": 1236000,
+    "neighbors": [
+      "Guinea",
+      "Liberia"
+    ]
   },
   {
     "name": "Singapore",
@@ -1857,7 +2634,10 @@
     "lat": 1.35,
     "lng": 103.82,
     "gdp_per_capita": 82810,
-    "capital_population": 5918000
+    "capital_population": 5918000,
+    "neighbors": [
+      "Malaysia"
+    ]
   },
   {
     "name": "Slovakia",
@@ -1869,7 +2649,14 @@
     "lat": 48.15,
     "lng": 17.11,
     "gdp_per_capita": 21540,
-    "capital_population": 476000
+    "capital_population": 476000,
+    "neighbors": [
+      "Czech Republic",
+      "Austria",
+      "Hungary",
+      "Poland",
+      "Ukraine"
+    ]
   },
   {
     "name": "Slovenia",
@@ -1881,7 +2668,13 @@
     "lat": 46.05,
     "lng": 14.51,
     "gdp_per_capita": 28890,
-    "capital_population": 295000
+    "capital_population": 295000,
+    "neighbors": [
+      "Austria",
+      "Italy",
+      "Croatia",
+      "Hungary"
+    ]
   },
   {
     "name": "Solomon Islands",
@@ -1893,7 +2686,8 @@
     "lat": -9.43,
     "lng": 160.05,
     "gdp_per_capita": 2420,
-    "capital_population": 98000
+    "capital_population": 98000,
+    "neighbors": []
   },
   {
     "name": "Somalia",
@@ -1905,7 +2699,12 @@
     "lat": 2.05,
     "lng": 45.34,
     "gdp_per_capita": 450,
-    "capital_population": 2587000
+    "capital_population": 2587000,
+    "neighbors": [
+      "Ethiopia",
+      "Kenya",
+      "Djibouti"
+    ]
   },
   {
     "name": "South Africa",
@@ -1917,7 +2716,15 @@
     "lat": -25.75,
     "lng": 28.19,
     "gdp_per_capita": 6190,
-    "capital_population": 741000
+    "capital_population": 741000,
+    "neighbors": [
+      "Namibia",
+      "Botswana",
+      "Zimbabwe",
+      "Mozambique",
+      "Eswatini",
+      "Lesotho"
+    ]
   },
   {
     "name": "South Korea",
@@ -1929,7 +2736,10 @@
     "lat": 37.57,
     "lng": 126.98,
     "gdp_per_capita": 33390,
-    "capital_population": 9776000
+    "capital_population": 9776000,
+    "neighbors": [
+      "North Korea"
+    ]
   },
   {
     "name": "South Sudan",
@@ -1939,9 +2749,18 @@
     "continent": "Africa",
     "flag": "ss",
     "lat": 4.85,
-    "lng": 31.60,
+    "lng": 31.6,
     "gdp_per_capita": 830,
-    "capital_population": 525000
+    "capital_population": 525000,
+    "neighbors": [
+      "Sudan",
+      "Ethiopia",
+      "Kenya",
+      "Uganda",
+      "DR Congo",
+      "Central African Republic",
+      "Chad"
+    ]
   },
   {
     "name": "Spain",
@@ -1951,9 +2770,15 @@
     "continent": "Europe",
     "flag": "es",
     "lat": 40.42,
-    "lng": -3.70,
+    "lng": -3.7,
     "gdp_per_capita": 30120,
-    "capital_population": 3348000
+    "capital_population": 3348000,
+    "neighbors": [
+      "France",
+      "Andorra",
+      "Portugal",
+      "Morocco"
+    ]
   },
   {
     "name": "Sri Lanka",
@@ -1965,7 +2790,8 @@
     "lat": 6.89,
     "lng": 79.92,
     "gdp_per_capita": 3820,
-    "capital_population": 115000
+    "capital_population": 115000,
+    "neighbors": []
   },
   {
     "name": "Sudan",
@@ -1977,7 +2803,16 @@
     "lat": 15.55,
     "lng": 32.53,
     "gdp_per_capita": 870,
-    "capital_population": 6160000
+    "capital_population": 6160000,
+    "neighbors": [
+      "Egypt",
+      "Libya",
+      "Chad",
+      "Central African Republic",
+      "South Sudan",
+      "Ethiopia",
+      "Eritrea"
+    ]
   },
   {
     "name": "Suriname",
@@ -1989,7 +2824,11 @@
     "lat": 5.83,
     "lng": -55.17,
     "gdp_per_capita": 5890,
-    "capital_population": 244000
+    "capital_population": 244000,
+    "neighbors": [
+      "Guyana",
+      "Brazil"
+    ]
   },
   {
     "name": "Sweden",
@@ -2001,7 +2840,12 @@
     "lat": 59.33,
     "lng": 18.07,
     "gdp_per_capita": 55690,
-    "capital_population": 979000
+    "capital_population": 979000,
+    "neighbors": [
+      "Norway",
+      "Finland",
+      "Denmark"
+    ]
   },
   {
     "name": "Switzerland",
@@ -2013,7 +2857,14 @@
     "lat": 46.95,
     "lng": 7.45,
     "gdp_per_capita": 93720,
-    "capital_population": 134000
+    "capital_population": 134000,
+    "neighbors": [
+      "France",
+      "Germany",
+      "Austria",
+      "Liechtenstein",
+      "Italy"
+    ]
   },
   {
     "name": "Syria",
@@ -2025,7 +2876,14 @@
     "lat": 33.51,
     "lng": 36.29,
     "gdp_per_capita": 650,
-    "capital_population": 2503000
+    "capital_population": 2503000,
+    "neighbors": [
+      "Turkey",
+      "Iraq",
+      "Jordan",
+      "Israel",
+      "Lebanon"
+    ]
   },
   {
     "name": "Taiwan",
@@ -2037,7 +2895,8 @@
     "lat": 25.05,
     "lng": 121.53,
     "gdp_per_capita": 32900,
-    "capital_population": 2646000
+    "capital_population": 2646000,
+    "neighbors": []
   },
   {
     "name": "Tajikistan",
@@ -2049,7 +2908,13 @@
     "lat": 38.56,
     "lng": 68.77,
     "gdp_per_capita": 1140,
-    "capital_population": 924000
+    "capital_population": 924000,
+    "neighbors": [
+      "Kyrgyzstan",
+      "Uzbekistan",
+      "Afghanistan",
+      "China"
+    ]
   },
   {
     "name": "Tanzania",
@@ -2061,7 +2926,17 @@
     "lat": -6.17,
     "lng": 35.74,
     "gdp_per_capita": 1130,
-    "capital_population": 410000
+    "capital_population": 410000,
+    "neighbors": [
+      "Kenya",
+      "Uganda",
+      "Rwanda",
+      "Burundi",
+      "DR Congo",
+      "Zambia",
+      "Malawi",
+      "Mozambique"
+    ]
   },
   {
     "name": "Thailand",
@@ -2071,9 +2946,15 @@
     "continent": "Asia",
     "flag": "th",
     "lat": 13.76,
-    "lng": 100.50,
+    "lng": 100.5,
     "gdp_per_capita": 7230,
-    "capital_population": 10722000
+    "capital_population": 10722000,
+    "neighbors": [
+      "Malaysia",
+      "Myanmar",
+      "Laos",
+      "Cambodia"
+    ]
   },
   {
     "name": "Timor-Leste",
@@ -2085,7 +2966,10 @@
     "lat": -8.56,
     "lng": 125.58,
     "gdp_per_capita": 2280,
-    "capital_population": 281000
+    "capital_population": 281000,
+    "neighbors": [
+      "Indonesia"
+    ]
   },
   {
     "name": "Togo",
@@ -2097,7 +2981,12 @@
     "lat": 6.14,
     "lng": 1.22,
     "gdp_per_capita": 930,
-    "capital_population": 1982000
+    "capital_population": 1982000,
+    "neighbors": [
+      "Benin",
+      "Burkina Faso",
+      "Ghana"
+    ]
   },
   {
     "name": "Tonga",
@@ -2109,7 +2998,8 @@
     "lat": -21.14,
     "lng": -175.22,
     "gdp_per_capita": 4810,
-    "capital_population": 24000
+    "capital_population": 24000,
+    "neighbors": []
   },
   {
     "name": "Trinidad and Tobago",
@@ -2121,7 +3011,8 @@
     "lat": 10.65,
     "lng": -61.52,
     "gdp_per_capita": 17200,
-    "capital_population": 39000
+    "capital_population": 39000,
+    "neighbors": []
   },
   {
     "name": "Tunisia",
@@ -2133,7 +3024,11 @@
     "lat": 36.82,
     "lng": 10.18,
     "gdp_per_capita": 4030,
-    "capital_population": 693000
+    "capital_population": 693000,
+    "neighbors": [
+      "Algeria",
+      "Libya"
+    ]
   },
   {
     "name": "Turkey",
@@ -2145,7 +3040,17 @@
     "lat": 39.93,
     "lng": 32.86,
     "gdp_per_capita": 10670,
-    "capital_population": 5700000
+    "capital_population": 5700000,
+    "neighbors": [
+      "Greece",
+      "Bulgaria",
+      "Georgia",
+      "Armenia",
+      "Azerbaijan",
+      "Iran",
+      "Iraq",
+      "Syria"
+    ]
   },
   {
     "name": "Turkmenistan",
@@ -2157,7 +3062,13 @@
     "lat": 37.96,
     "lng": 58.33,
     "gdp_per_capita": 9180,
-    "capital_population": 1031000
+    "capital_population": 1031000,
+    "neighbors": [
+      "Kazakhstan",
+      "Uzbekistan",
+      "Afghanistan",
+      "Iran"
+    ]
   },
   {
     "name": "Tuvalu",
@@ -2167,9 +3078,10 @@
     "continent": "Oceania",
     "flag": "tv",
     "lat": -8.52,
-    "lng": 179.20,
+    "lng": 179.2,
     "gdp_per_capita": 4480,
-    "capital_population": 6200
+    "capital_population": 6200,
+    "neighbors": []
   },
   {
     "name": "Uganda",
@@ -2181,7 +3093,14 @@
     "lat": 0.32,
     "lng": 32.58,
     "gdp_per_capita": 870,
-    "capital_population": 3652000
+    "capital_population": 3652000,
+    "neighbors": [
+      "DR Congo",
+      "South Sudan",
+      "Kenya",
+      "Tanzania",
+      "Rwanda"
+    ]
   },
   {
     "name": "Ukraine",
@@ -2193,7 +3112,16 @@
     "lat": 50.45,
     "lng": 30.52,
     "gdp_per_capita": 4540,
-    "capital_population": 2952000
+    "capital_population": 2952000,
+    "neighbors": [
+      "Russia",
+      "Belarus",
+      "Poland",
+      "Slovakia",
+      "Hungary",
+      "Romania",
+      "Moldova"
+    ]
   },
   {
     "name": "United Arab Emirates",
@@ -2205,7 +3133,11 @@
     "lat": 24.45,
     "lng": 54.65,
     "gdp_per_capita": 49450,
-    "capital_population": 1500000
+    "capital_population": 1500000,
+    "neighbors": [
+      "Saudi Arabia",
+      "Oman"
+    ]
   },
   {
     "name": "United Kingdom",
@@ -2217,7 +3149,10 @@
     "lat": 51.51,
     "lng": -0.13,
     "gdp_per_capita": 46510,
-    "capital_population": 9002000
+    "capital_population": 9002000,
+    "neighbors": [
+      "Ireland"
+    ]
   },
   {
     "name": "United States",
@@ -2229,7 +3164,11 @@
     "lat": 38.91,
     "lng": -77.04,
     "gdp_per_capita": 80030,
-    "capital_population": 712000
+    "capital_population": 712000,
+    "neighbors": [
+      "Canada",
+      "Mexico"
+    ]
   },
   {
     "name": "Uruguay",
@@ -2238,10 +3177,14 @@
     "area": 176215,
     "continent": "South America",
     "flag": "uy",
-    "lat": -34.90,
+    "lat": -34.9,
     "lng": -56.19,
     "gdp_per_capita": 17870,
-    "capital_population": 1381000
+    "capital_population": 1381000,
+    "neighbors": [
+      "Argentina",
+      "Brazil"
+    ]
   },
   {
     "name": "Uzbekistan",
@@ -2250,10 +3193,17 @@
     "area": 448978,
     "continent": "Asia",
     "flag": "uz",
-    "lat": 41.30,
+    "lat": 41.3,
     "lng": 69.27,
     "gdp_per_capita": 2200,
-    "capital_population": 2908000
+    "capital_population": 2908000,
+    "neighbors": [
+      "Kazakhstan",
+      "Kyrgyzstan",
+      "Tajikistan",
+      "Afghanistan",
+      "Turkmenistan"
+    ]
   },
   {
     "name": "Vanuatu",
@@ -2265,7 +3215,8 @@
     "lat": -17.73,
     "lng": 168.32,
     "gdp_per_capita": 3220,
-    "capital_population": 65000
+    "capital_population": 65000,
+    "neighbors": []
   },
   {
     "name": "Vatican City",
@@ -2274,10 +3225,13 @@
     "area": 0,
     "continent": "Europe",
     "flag": "va",
-    "lat": 41.90,
+    "lat": 41.9,
     "lng": 12.45,
     "gdp_per_capita": 21000,
-    "capital_population": 800
+    "capital_population": 800,
+    "neighbors": [
+      "Italy"
+    ]
   },
   {
     "name": "Venezuela",
@@ -2289,7 +3243,12 @@
     "lat": 10.49,
     "lng": -66.88,
     "gdp_per_capita": 3740,
-    "capital_population": 2909000
+    "capital_population": 2909000,
+    "neighbors": [
+      "Colombia",
+      "Brazil",
+      "Guyana"
+    ]
   },
   {
     "name": "Vietnam",
@@ -2301,7 +3260,12 @@
     "lat": 21.03,
     "lng": 105.85,
     "gdp_per_capita": 4160,
-    "capital_population": 8246000
+    "capital_population": 8246000,
+    "neighbors": [
+      "China",
+      "Laos",
+      "Cambodia"
+    ]
   },
   {
     "name": "Yemen",
@@ -2313,7 +3277,11 @@
     "lat": 15.35,
     "lng": 44.21,
     "gdp_per_capita": 690,
-    "capital_population": 3937000
+    "capital_population": 3937000,
+    "neighbors": [
+      "Saudi Arabia",
+      "Oman"
+    ]
   },
   {
     "name": "Zambia",
@@ -2325,7 +3293,17 @@
     "lat": -15.42,
     "lng": 28.28,
     "gdp_per_capita": 1160,
-    "capital_population": 3360000
+    "capital_population": 3360000,
+    "neighbors": [
+      "DR Congo",
+      "Tanzania",
+      "Malawi",
+      "Mozambique",
+      "Zimbabwe",
+      "Botswana",
+      "Namibia",
+      "Angola"
+    ]
   },
   {
     "name": "Zimbabwe",
@@ -2337,6 +3315,12 @@
     "lat": -17.83,
     "lng": 31.05,
     "gdp_per_capita": 1680,
-    "capital_population": 1570000
+    "capital_population": 1570000,
+    "neighbors": [
+      "Zambia",
+      "Mozambique",
+      "South Africa",
+      "Botswana"
+    ]
   }
 ]

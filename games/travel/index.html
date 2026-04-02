@@ -6,6 +6,7 @@
   <meta name="description" content="Travel — find the shortest route between two countries by crossing neighbors.">
   <title>Travel — GeoGames</title>
   <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -22,33 +23,27 @@
     </nav>
   </header>
 
-  <div class="game-container">
-    <h1 class="game-title">Travel</h1>
-    <p class="game-subtitle">Get from the start country to the destination by crossing neighboring countries. Find the shortest route!</p>
+  <div class="travel-wrapper">
 
-    <!-- Score bar -->
-    <div class="score-bar">
-      <div>
-        <div class="label">Your Steps</div>
-        <div class="value" id="steps-taken">0</div>
-      </div>
-      <div>
-        <div class="label">Optimal</div>
-        <div class="value streak" id="optimal-steps">?</div>
-      </div>
-      <div>
-        <div class="label">Best (fewest extra)</div>
-        <div class="value" id="best">—</div>
-      </div>
-    </div>
+    <div class="travel-header">
+      <h1 class="game-title">Travel</h1>
+      <p class="game-subtitle">Click neighboring countries on the map to travel from start to destination. Find the shortest route!</p>
 
-    <!-- Route display -->
-    <div id="route-bar" class="route-bar">
-      <!-- filled dynamically -->
-    </div>
-
-    <!-- Game area -->
-    <div id="game-area">
+      <!-- Score bar -->
+      <div class="score-bar">
+        <div>
+          <div class="label">Your Steps</div>
+          <div class="value" id="steps-taken">0</div>
+        </div>
+        <div>
+          <div class="label">Optimal</div>
+          <div class="value streak" id="optimal-steps">?</div>
+        </div>
+        <div>
+          <div class="label">Best</div>
+          <div class="value" id="best">—</div>
+        </div>
+      </div>
 
       <!-- Endpoints -->
       <div class="endpoints">
@@ -65,21 +60,23 @@
         </div>
       </div>
 
-      <!-- Current country + neighbors -->
-      <div class="current-panel">
-        <div class="current-label">You are in</div>
-        <div class="current-country" id="current-name"></div>
-        <div class="current-flag" id="current-flag"></div>
-      </div>
-
-      <div class="neighbors-label">Choose your next country:</div>
-      <div class="neighbors-grid" id="neighbors-grid">
-        <!-- neighbor buttons injected here -->
-      </div>
-
+      <!-- Route bar -->
+      <div id="route-bar" class="route-bar"></div>
     </div>
 
-    <!-- Game over -->
+    <!-- Map (always visible) -->
+    <div id="map"></div>
+    <div id="map-feedback" class="map-feedback"></div>
+
+    <!-- Map legend -->
+    <div class="map-legend">
+      <span class="legend-item legend-current">■ You are here</span>
+      <span class="legend-item legend-dest">■ Destination</span>
+      <span class="legend-item legend-neighbor">■ Valid neighbor</span>
+      <span class="legend-item legend-visited">■ Visited</span>
+    </div>
+
+    <!-- Game over (appears below map, map stays visible) -->
     <div id="game-over" class="game-over" style="display:none;">
       <div class="final-label" id="result-label">ARRIVED!</div>
       <div class="final-score" id="result-steps"></div>
@@ -93,6 +90,7 @@
 
   </div>
 
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="/js/shared.js"></script>
   <script src="game.js"></script>
 </body>

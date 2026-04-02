@@ -1,5 +1,17 @@
 /* Travel — Game Styles */
 
+/* Wide wrapper to give the map more room */
+.travel-wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-md);
+}
+
+.travel-header {
+  max-width: 700px;
+  margin: 0 auto var(--space-lg);
+}
+
 /* Endpoints (FROM → TO) */
 .endpoints {
   display: flex;
@@ -10,7 +22,7 @@
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   padding: var(--space-lg);
-  margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-md);
 }
 
 .endpoint {
@@ -32,7 +44,7 @@
 .dest-endpoint  .endpoint-label { color: var(--accent-warm); }
 
 .endpoint-flag .flag-img {
-  width: 64px;
+  width: 56px;
   height: auto;
   border-radius: 4px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.4);
@@ -42,11 +54,11 @@
 .endpoint-name {
   font-family: var(--font-mono);
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 0.95rem;
 }
 
 .endpoint-arrow {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   color: var(--text-muted);
   flex-shrink: 0;
 }
@@ -61,7 +73,6 @@
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   padding: var(--space-sm) var(--space-md);
-  margin-bottom: var(--space-lg);
   min-height: 44px;
   font-size: 0.85rem;
   font-family: var(--font-mono);
@@ -81,103 +92,55 @@
   color: var(--text-muted);
 }
 
-/* Current country panel */
-.current-panel {
-  text-align: center;
-  margin-bottom: var(--space-lg);
-  padding: var(--space-lg);
-  background: var(--bg-card);
-  border: 1px solid var(--accent);
+/* Map */
+#map {
+  width: 100%;
+  height: 500px;
   border-radius: var(--radius-md);
-}
-
-.current-label {
-  color: var(--text-muted);
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-bottom: var(--space-xs);
-}
-
-.current-country {
-  font-family: var(--font-mono);
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: var(--space-sm);
-}
-
-.current-flag .flag-img {
-  width: 80px;
-  height: auto;
-  border-radius: 4px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
-}
-
-/* Neighbor buttons */
-.neighbors-label {
-  color: var(--text-secondary);
-  font-size: 0.85rem;
-  margin-bottom: var(--space-sm);
-  text-align: center;
-}
-
-.neighbors-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: var(--space-sm);
-  margin-bottom: var(--space-lg);
-}
-
-.neighbor-btn {
-  display: flex;
-  align-items: center;
-  gap: var(--space-sm);
-  padding: var(--space-sm) var(--space-md);
-  background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  color: var(--text-primary);
-  font-family: var(--font-body);
-  font-size: 0.95rem;
+  background: #0f1923;
+  cursor: default;
+}
+
+/* Leaflet path cursor: pointer for all country shapes so clicking feels natural */
+.leaflet-interactive {
   cursor: pointer;
-  transition: background 0.15s, border-color 0.15s, transform 0.1s;
-  text-align: left;
 }
 
-.neighbor-btn:hover {
-  background: var(--bg-card-hover);
-  border-color: var(--accent);
-  transform: translateY(-2px);
+/* Feedback message below map */
+.map-feedback {
+  min-height: 1.6rem;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  padding: var(--space-xs) 0;
+  color: transparent;
+  transition: color 0.15s;
 }
 
-.neighbor-btn:active {
-  transform: scale(0.97);
+.map-feedback.error {
+  color: var(--accent-red);
 }
 
-.neighbor-btn.neighbor-dest {
-  border-color: var(--accent-warm);
-  background: rgba(245, 158, 11, 0.08);
-  font-weight: 700;
+/* Map legend */
+.map-legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
 }
 
-.neighbor-btn.neighbor-dest:hover {
-  background: rgba(245, 158, 11, 0.18);
+.legend-item {
+  color: var(--text-muted);
 }
 
-.neighbor-btn.neighbor-visited {
-  opacity: 0.45;
-  border-style: dashed;
-}
-
-.neighbor-flag {
-  font-size: 1.4rem;
-  line-height: 1;
-  flex-shrink: 0;
-}
-
-.neighbor-name {
-  line-height: 1.2;
-}
+.legend-current  { color: #38bdf8; }
+.legend-dest     { color: #f59e0b; }
+.legend-neighbor { color: rgba(56,189,248,0.6); }
+.legend-visited  { color: #34d399; }
 
 /* Game over */
 .result-detail {
@@ -202,13 +165,8 @@
   color: var(--text-secondary);
 }
 
-.final-step {
-  white-space: nowrap;
-}
-
-.final-arrow {
-  color: var(--text-muted);
-}
+.final-step  { white-space: nowrap; }
+.final-arrow { color: var(--text-muted); }
 
 /* Responsive */
 @media (max-width: 640px) {
@@ -221,7 +179,7 @@
     transform: rotate(90deg);
   }
 
-  .neighbors-grid {
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  #map {
+    height: 380px;
   }
 }

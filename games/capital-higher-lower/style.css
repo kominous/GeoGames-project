@@ -1,0 +1,60 @@
+/* Higher or Lower — Game Styles */
+
+.vs-divider {
+  text-align: center;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--text-muted);
+  padding: var(--space-md) 0;
+  position: relative;
+}
+
+.vs-divider::before,
+.vs-divider::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 35%;
+  height: 1px;
+  background: var(--border);
+}
+
+.vs-divider::before { left: 0; }
+.vs-divider::after { right: 0; }
+
+.mystery {
+  border-style: dashed;
+}
+
+.btn-row {
+  display: flex;
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+  justify-content: center;
+}
+
+.btn-row .btn {
+  flex: 1;
+  max-width: 180px;
+  font-size: 1.1rem;
+  padding: var(--space-md) var(--space-xl);
+}
+
+/* Reveal animation */
+.country-display.reveal .country-stat {
+  animation: countReveal 0.5s ease forwards;
+}
+
+@keyframes countReveal {
+  from { opacity: 0; transform: scale(0.5); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.country-display.correct-reveal {
+  border-color: var(--accent-green);
+}
+
+.country-display.wrong-reveal {
+  border-color: var(--accent-red);
+}

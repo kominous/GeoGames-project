@@ -88,9 +88,7 @@
   font-weight: 700;
 }
 
-.route-arrow {
-  color: var(--text-muted);
-}
+.route-arrow { color: var(--text-muted); }
 
 /* Map */
 #map {
@@ -102,12 +100,62 @@
   cursor: default;
 }
 
-/* Leaflet path cursor: pointer for all country shapes so clicking feels natural */
-.leaflet-interactive {
-  cursor: pointer;
+/* Map legend */
+.map-legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-md);
+  margin: var(--space-sm) 0;
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
 }
 
-/* Feedback message below map */
+.legend-item  { color: var(--text-muted); }
+.legend-current { color: #38bdf8; }
+.legend-dest    { color: #f59e0b; }
+.legend-visited { color: #34d399; }
+
+/* Text input */
+.input-area {
+  display: flex;
+  gap: var(--space-md);
+  max-width: 560px;
+  margin: 0 auto var(--space-xs);
+}
+
+.answer-input {
+  flex: 1;
+  padding: var(--space-md) var(--space-lg);
+  background: var(--bg-card);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.answer-input:focus { border-color: var(--accent); }
+
+.answer-input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Shake on wrong answer */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%       { transform: translateX(-8px); }
+  40%       { transform: translateX( 8px); }
+  60%       { transform: translateX(-5px); }
+  80%       { transform: translateX( 5px); }
+}
+
+.answer-input.shake { animation: shake 0.4s ease; }
+
+/* Feedback message */
 .map-feedback {
   min-height: 1.6rem;
   text-align: center;
@@ -115,32 +163,11 @@
   font-size: 0.85rem;
   padding: var(--space-xs) 0;
   color: transparent;
-  transition: color 0.15s;
+  transition: color 0.1s;
+  margin-bottom: var(--space-sm);
 }
 
-.map-feedback.error {
-  color: var(--accent-red);
-}
-
-/* Map legend */
-.map-legend {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: var(--space-md);
-  margin-bottom: var(--space-lg);
-  font-size: 0.75rem;
-  font-family: var(--font-mono);
-}
-
-.legend-item {
-  color: var(--text-muted);
-}
-
-.legend-current  { color: #38bdf8; }
-.legend-dest     { color: #f59e0b; }
-.legend-neighbor { color: rgba(56,189,248,0.6); }
-.legend-visited  { color: #34d399; }
+.map-feedback.error { color: var(--accent-red); }
 
 /* Game over */
 .result-detail {
@@ -175,11 +202,9 @@
     gap: var(--space-md);
   }
 
-  .endpoint-arrow {
-    transform: rotate(90deg);
-  }
+  .endpoint-arrow { transform: rotate(90deg); }
 
-  #map {
-    height: 380px;
-  }
+  #map { height: 380px; }
+
+  .input-area { flex-direction: column; }
 }

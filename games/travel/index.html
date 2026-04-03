@@ -27,7 +27,7 @@
 
     <div class="travel-header">
       <h1 class="game-title">Travel</h1>
-      <p class="game-subtitle">Click neighboring countries on the map to travel from start to destination. Find the shortest route!</p>
+      <p class="game-subtitle">Type a neighboring country to move there. Get from start to destination in as few steps as possible!</p>
 
       <!-- Score bar -->
       <div class="score-bar">
@@ -64,19 +64,32 @@
       <div id="route-bar" class="route-bar"></div>
     </div>
 
-    <!-- Map (always visible) -->
+    <!-- Map -->
     <div id="map"></div>
-    <div id="map-feedback" class="map-feedback"></div>
 
-    <!-- Map legend -->
+    <!-- Legend -->
     <div class="map-legend">
       <span class="legend-item legend-current">■ You are here</span>
       <span class="legend-item legend-dest">■ Destination</span>
-      <span class="legend-item legend-neighbor">■ Valid neighbor</span>
       <span class="legend-item legend-visited">■ Visited</span>
     </div>
 
-    <!-- Game over (appears below map, map stays visible) -->
+    <!-- Type input -->
+    <div class="input-area" id="input-area">
+      <input
+        type="text"
+        id="answer-input"
+        class="answer-input"
+        placeholder="Type a neighboring country…"
+        autocomplete="off"
+        autocorrect="off"
+        spellcheck="false"
+      >
+      <button class="btn btn-primary" id="submit-btn" onclick="submitGuess()">Go →</button>
+    </div>
+    <div id="map-feedback" class="map-feedback"></div>
+
+    <!-- Game over -->
     <div id="game-over" class="game-over" style="display:none;">
       <div class="final-label" id="result-label">ARRIVED!</div>
       <div class="final-score" id="result-steps"></div>

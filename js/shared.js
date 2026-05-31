@@ -157,5 +157,49 @@ const GeoUtils = {
       stop() { clearInterval(interval); },
       getRemaining() { return remaining; }
     };
+  },
+
+  // ---- Daily Challenge utilities ----
+
+  // Mulberry32 seeded PRNG — deterministic, same seed → same sequence
+  makeRNG(seed) {
+    let s = seed >>> 0;
+    return () => {
+      s |= 0; s = (s + 0x6D2B79F5) | 0;
+      let t = Math.imul(s ^ (s >>> 15), 1 | s);
+      t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
+  },
+
+  // Fisher-Yates shuffle driven by a seeded RNG
+  seededShuffle(arr, rng) {
+    const a = [...arr];
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(rng() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  },
+
+  // Today's UTC date as "YYYY-MM-DD"
+  getDailyDateKey() {
+    const d = new Date();
+    const pad = n => String(n).padStart(2, '0');
+    return `${d.getUTCFullYear()}-${pad(d.getUTCMonth() + 1)}-${pad(d.getUTCDate())}`;
+  },
+
+  // Numeric seed from today's UTC date, e.g. 2025-06-01 → 20250601
+  getDailySeed() {
+    const [y, m, day] = this.getDailyDateKey().split('-').map(Number);
+    return y * 10000 + m * 100 + day;
+  },
+
+  // Days since 2025-01-01 UTC, starting at 1
+  getDailyNumber() {
+    const epoch = Date.UTC(2025, 0, 1);
+    const now = new Date();
+    const today = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate());
+    return Math.floor((today - epoch) / 86400000) + 1;
   }
 };

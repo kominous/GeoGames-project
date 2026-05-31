@@ -22,6 +22,53 @@
 
   <link rel="stylesheet" href="/css/global.css">
 
+  <style>
+    .daily-hub-card {
+      grid-column: 1 / -1;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      border-color: var(--accent-warm);
+      background: linear-gradient(135deg, var(--bg-card) 0%, rgba(245,158,11,0.06) 100%);
+    }
+    .daily-hub-card:hover {
+      border-color: #fbbf24;
+      background: linear-gradient(135deg, var(--bg-card-hover) 0%, rgba(245,158,11,0.11) 100%);
+    }
+    .daily-hub-main {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-lg);
+    }
+    .daily-hub-meta {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: var(--space-sm);
+      flex-shrink: 0;
+    }
+    .daily-hub-status {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--accent);
+      margin-top: var(--space-xs);
+    }
+    .daily-hub-streak {
+      font-family: var(--font-mono);
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--accent-warm);
+    }
+    .daily-hub-tag-done {
+      background: rgba(52, 211, 153, 0.15) !important;
+      color: var(--accent-green) !important;
+    }
+    @media (max-width: 640px) {
+      .daily-hub-card  { flex-direction: column; }
+      .daily-hub-meta  { align-items: flex-start; }
+    }
+  </style>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -58,6 +105,22 @@
     </section>
 
     <section class="game-grid">
+
+      <!-- Daily Challenge — pinned feature card -->
+      <a href="/games/daily/" class="game-card daily-hub-card" id="daily-hub-card">
+        <div class="daily-hub-main">
+          <div class="card-emoji">📅</div>
+          <div>
+            <div class="card-title">Daily Challenge</div>
+            <div class="card-desc">Five mixed questions — flags, capitals, populations, and areas. One attempt per day. Come back tomorrow for a new challenge.</div>
+            <div class="daily-hub-status" id="daily-hub-status">New challenge available!</div>
+          </div>
+        </div>
+        <div class="daily-hub-meta">
+          <div class="daily-hub-streak" id="daily-hub-streak"></div>
+          <div class="card-tag" id="daily-hub-tag">DAILY</div>
+        </div>
+      </a>
 
       <!-- Higher or Lower: Population -->
       <a href="/games/higher-lower/" class="game-card">
@@ -115,6 +178,31 @@
   <footer class="site-footer">
     <p>GeoGames — Data sourced from public datasets.</p>
   </footer>
+
+  <script>
+    (function () {
+      var d   = new Date();
+      var pad = function (n) { return String(n).padStart(2, '0'); };
+      var today  = d.getUTCFullYear() + '-' + pad(d.getUTCMonth() + 1) + '-' + pad(d.getUTCDate());
+      var played = localStorage.getItem('geo_daily_date') === today;
+      var streak = parseInt(localStorage.getItem('geo_daily_streak') || '0', 10);
+
+      if (played) {
+        var res   = JSON.parse(localStorage.getItem('geo_daily_result') || '[]');
+        var score = res.filter(Boolean).length;
+        var grid  = res.map(function (r) { return r ? '🟩' : '🟥'; }).join('');
+        var statusEl = document.getElementById('daily-hub-status');
+        if (statusEl) statusEl.innerHTML = grid + '&thinsp;' + score + '/5';
+        var tagEl = document.getElementById('daily-hub-tag');
+        if (tagEl) { tagEl.textContent = 'DONE'; tagEl.classList.add('daily-hub-tag-done'); }
+      }
+
+      if (streak > 0) {
+        var streakEl = document.getElementById('daily-hub-streak');
+        if (streakEl) streakEl.textContent = '🔥 ' + streak;
+      }
+    })();
+  </script>
 
 </body>
 </html>

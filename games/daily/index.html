@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GeoGames Daily — A New Geography Challenge Every Day</title>
+  <meta name="description" content="A fresh 5-question geography challenge every day — flags, capitals, populations, and areas. One attempt per day. Keep your streak alive.">
+  <link rel="canonical" href="https://geo-games-project-1.vercel.app/games/daily/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://geo-games-project-1.vercel.app/games/daily/">
+  <meta property="og:title" content="GeoGames Daily — A New Geography Challenge Every Day">
+  <meta property="og:description" content="A fresh 5-question geography challenge every day — flags, capitals, populations, and areas. One attempt per day.">
+  <meta property="og:image" content="https://geo-games-project-1.vercel.app/assets/images/og-daily.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GeoGames Daily — A New Geography Challenge Every Day">
+  <meta name="twitter:description" content="A fresh 5-question geography challenge every day — flags, capitals, populations, and areas. One attempt per day.">
+  <meta name="twitter:image" content="https://geo-games-project-1.vercel.app/assets/images/og-daily.png">
+
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "GeoGames Daily",
+    "url": "https://geo-games-project-1.vercel.app/games/daily/",
+    "description": "A fresh 5-question geography challenge every day — flags, capitals, populations, and areas.",
+    "applicationCategory": "Game",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="/" class="site-logo">
+      <span class="logo-icon">🌍</span>
+      <span class="logo-text">Geo<span>Games</span></span>
+    </a>
+    <nav>
+      <ul class="site-nav">
+        <li><a href="/">← All Games</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="game-container">
+
+    <!-- Loading -->
+    <div id="screen-loading">
+      <div class="loading-spinner"></div>
+      <p style="color:var(--text-secondary);text-align:center;margin-top:var(--space-lg);">Loading today's challenge…</p>
+    </div>
+
+    <!-- Already played today -->
+    <div id="screen-played" style="display:none;">
+      <div class="daily-header">
+        <div class="daily-number" id="played-number"></div>
+        <h1 class="game-title">GeoGames Daily</h1>
+        <p class="game-subtitle">You've already completed today's challenge.</p>
+      </div>
+      <div class="streak-display" id="played-streak"></div>
+      <div class="result-card" id="played-result-card"></div>
+      <div class="action-row">
+        <button class="btn btn-primary" onclick="shareResult()">Share result</button>
+        <a href="/" class="btn btn-outline">More games</a>
+      </div>
+      <p class="next-challenge" id="played-next"></p>
+    </div>
+
+    <!-- Game in progress -->
+    <div id="screen-game" style="display:none;">
+      <div class="daily-header">
+        <div class="daily-number" id="game-number"></div>
+        <div class="streak-display" id="game-streak"></div>
+      </div>
+      <div class="progress-wrap">
+        <div class="progress-dots" id="progress-dots"></div>
+        <div class="progress-label" id="progress-label">Question 1 / 5</div>
+      </div>
+      <div id="question-area"></div>
+    </div>
+
+    <!-- Results -->
+    <div id="screen-results" style="display:none;">
+      <div class="daily-header">
+        <div class="daily-number" id="results-number"></div>
+        <h1 class="game-title">Challenge Complete!</h1>
+      </div>
+      <div class="streak-display" id="results-streak"></div>
+      <div class="result-card" id="results-card"></div>
+      <div class="action-row">
+        <button class="btn btn-primary" onclick="shareResult()">Share result</button>
+        <a href="/" class="btn btn-outline">More games</a>
+      </div>
+      <p class="next-challenge" id="results-next"></p>
+    </div>
+
+  </div>
+
+  <script src="/js/shared.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>

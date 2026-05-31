@@ -1,4 +1,4 @@
-User-agent: *
+﻿User-agent: *
 Allow: /
 
-Sitemap: https://BASE_URL/sitemap.xml
+Sitemap: https://geo-games-project-1.vercel.app/sitemap.xml

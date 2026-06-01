@@ -7,12 +7,15 @@ let geoLayer    = null;
 let routeLine   = null;
 let layerByName = {};   // ourName → Leaflet feature layer
 
-// Natural Earth short name → our countryMap key (where they differ)
+// Natural Earth name → our countryMap key (where they differ).
+// Keys must match exactly what appears in the GeoJSON feature's name / admin /
+// sovereignt / NAME / ADMIN / SOVEREIGNT properties.
 const NE_NAME_MAP = {
   'United States of America':             'United States',
   'Dem. Rep. Congo':                      'DR Congo',
   'Democratic Republic of the Congo':     'DR Congo',
   "Côte d'Ivoire":                        'Ivory Coast',
+  "Cote d'Ivoire":                        'Ivory Coast',
   'Czech Rep.':                           'Czech Republic',
   'Czechia':                              'Czech Republic',
   'Bosnia and Herz.':                     'Bosnia and Herzegovina',
@@ -50,6 +53,12 @@ const NE_NAME_MAP = {
   'Venezuela (Bolivarian Republic of)':   'Venezuela',
   'Tanzania':                             'Tanzania',
   'Timor-Leste':                          'Timor-Leste',
+  // Additional variants seen in some Natural Earth builds
+  'Cape Verde':                           'Cabo Verde',
+  'Myanmar (Burma)':                      'Myanmar',
+  'Ivory Coast':                          'Ivory Coast',
+  'North Korea':                          'North Korea',
+  'South Korea':                          'South Korea',
 };
 
 // Map styles
@@ -57,11 +66,10 @@ const STYLES = {
   current:  { fillColor: '#38bdf8', fillOpacity: 0.55, color: '#38bdf8', weight: 2.5, stroke: true },
   dest:     { fillColor: '#f59e0b', fillOpacity: 0.55, color: '#f59e0b', weight: 2.5, stroke: true },
   visited:  { fillColor: '#34d399', fillOpacity: 0.22, color: '#34d399', weight: 1,   stroke: true },
-  // Fog-of-war: opaque fill matching the map background so the country shape
-  // and outline are invisible. No stroke — a visible border would reveal shape.
+  // Default for every GeoJSON polygon — covers disputed territories, unrecognised
+  // states, and countries absent from countries.json as well as unreached playable
+  // countries.  No stroke so adjacent fogged polygons merge into one dark mass.
   fogged:   { fillColor: '#0f1923', fillOpacity: 1,    color: '#0f1923', weight: 0,   stroke: false },
-  // Truly absent from our dataset — remain transparent so the tile shows through.
-  hidden:   { fillOpacity: 0,       color: 'transparent', weight: 0,     stroke: false },
 };
 
 // ─── Input aliases ────────────────────────────────────────────────────────────
@@ -189,12 +197,20 @@ async function loadGeoData() {
 
 function resolveNEName(feature) {
   const props = feature.properties || {};
-  for (const raw of [props.name, props.admin, props.sovereignt]) {
+  // Try both lowercase and uppercase property keys — Natural Earth GeoJSON
+  // sources vary (some use `name`, others use `NAME`, etc.)
+  const candidates = [
+    props.name,       props.NAME,
+    props.admin,      props.ADMIN,
+    props.sovereignt, props.SOVEREIGNT,
+    props.name_long,  props.NAME_LONG,
+  ];
+  for (const raw of candidates) {
     if (!raw) continue;
     if (NE_NAME_MAP[raw])  return NE_NAME_MAP[raw];
     if (countryMap[raw])   return raw;
   }
-  return null;
+  return null;  // unrecognised territory — getFeatureStyle will fog it
 }
 
 // ─── Input normalisation ──────────────────────────────────────────────────────
@@ -298,11 +314,13 @@ function startGame() {
 // ─── Map style helpers ───────────────────────────────────────────────────────
 
 function getFeatureStyle(ourName) {
-  if (!ourName || !countryMap[ourName])              return STYLES.hidden;
-  if (ourName === currentCountry?.name)              return STYLES.current;
-  if (ourName === destCountry?.name)                 return STYLES.dest;
-  if (route.includes(ourName))                       return STYLES.visited;
-  return STYLES.fogged;   // in dataset, not yet reached — blends into map background
+  // Fog is the default for EVERY polygon — disputed territories, Somaliland,
+  // Western Sahara, and any country absent from countries.json all stay covered.
+  // Reveal only the active start, destination, and visited path.
+  if (ourName === currentCountry?.name)  return STYLES.current;
+  if (ourName === destCountry?.name)     return STYLES.dest;
+  if (ourName && route.includes(ourName)) return STYLES.visited;
+  return STYLES.fogged;
 }
 
 // animate=true adds the CSS transition class so reveals fade in smoothly.

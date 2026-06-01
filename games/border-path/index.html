@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Country Border Chain — Connect Countries Quiz</title>
+  <meta name="description" content="Hop from country to country along shared borders. Find the shortest path from start to destination in this geography chain quiz.">
+  <link rel="canonical" href="https://geo-games-project-1.vercel.app/games/border-path/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://geo-games-project-1.vercel.app/games/border-path/">
+  <meta property="og:title" content="Country Border Chain — Connect Countries Quiz">
+  <meta property="og:description" content="Hop from country to country along shared borders. Find the shortest path from start to destination.">
+  <meta property="og:image" content="https://geo-games-project-1.vercel.app/assets/images/og-border-path.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Country Border Chain — Connect Countries Quiz">
+  <meta name="twitter:description" content="Hop from country to country along shared borders. Find the shortest path from start to destination.">
+  <meta name="twitter:image" content="https://geo-games-project-1.vercel.app/assets/images/og-border-path.png">
+
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Country Border Chain",
+    "url": "https://geo-games-project-1.vercel.app/games/border-path/",
+    "description": "Hop from country to country along shared borders to reach the destination in as few steps as possible.",
+    "applicationCategory": "Game",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="/" class="site-logo">
+      <span class="logo-icon">🌍</span>
+      <span class="logo-text">Geo<span>Games</span></span>
+    </a>
+    <nav>
+      <ul class="site-nav">
+        <li><a href="/">← All Games</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="game-container">
+    <h1 class="game-title">Border Path</h1>
+    <p class="game-subtitle">Hop between neighbouring countries to reach the destination. Fewest steps wins.</p>
+
+    <!-- Score bar -->
+    <div class="score-bar">
+      <div>
+        <div class="label">Steps</div>
+        <div class="value streak" id="steps-count">0</div>
+      </div>
+      <div>
+        <div class="label">Par</div>
+        <div class="value" id="par-count">—</div>
+      </div>
+      <div>
+        <div class="label">Best</div>
+        <div class="value" id="best-score">—</div>
+      </div>
+    </div>
+
+    <!-- Game area -->
+    <div id="game-area">
+
+      <!-- Target banner -->
+      <div class="target-panel">
+        <span class="target-label">🎯 REACH</span>
+        <span class="target-flag" id="target-flag"></span>
+        <span class="target-name" id="target-name"></span>
+      </div>
+
+      <!-- Current country -->
+      <div class="current-panel" id="current-panel">
+        <div class="current-label">YOU ARE IN</div>
+        <div class="current-flag" id="current-flag"></div>
+        <div class="current-name" id="current-name"></div>
+      </div>
+
+      <!-- Neighbour buttons -->
+      <div class="neighbors-section">
+        <div class="section-label">BORDERING COUNTRIES — click to move</div>
+        <div class="neighbors-grid" id="neighbors-grid"></div>
+      </div>
+
+      <!-- Route chain -->
+      <div class="route-chain" id="route-chain"></div>
+
+      <!-- Give up / new puzzle -->
+      <div style="text-align:center; margin-top: var(--space-lg);">
+        <button class="btn btn-outline give-up-btn" onclick="startGame()">New puzzle</button>
+      </div>
+
+    </div>
+
+    <!-- Game over / win screen -->
+    <div id="game-over" class="game-over" style="display:none;">
+      <div class="final-label" id="result-label">PATH COMPLETE!</div>
+      <div class="final-score" id="final-steps"></div>
+      <div class="result-subtext">Par: <strong id="final-par"></strong> steps</div>
+      <div class="final-verdict" id="final-verdict"></div>
+      <div class="final-route" id="final-route"></div>
+      <div style="margin-top: var(--space-xl);">
+        <button class="btn btn-primary" onclick="startGame()">New puzzle</button>
+        <button class="btn share-btn" onclick="shareScore()">Share</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="/js/shared.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>

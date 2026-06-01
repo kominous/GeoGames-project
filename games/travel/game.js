@@ -52,12 +52,16 @@ const NE_NAME_MAP = {
   'Timor-Leste':                          'Timor-Leste',
 };
 
-// Map styles — unvisited countries are fully hidden
+// Map styles
 const STYLES = {
   current:  { fillColor: '#38bdf8', fillOpacity: 0.55, color: '#38bdf8', weight: 2.5, stroke: true },
   dest:     { fillColor: '#f59e0b', fillOpacity: 0.55, color: '#f59e0b', weight: 2.5, stroke: true },
   visited:  { fillColor: '#34d399', fillOpacity: 0.22, color: '#34d399', weight: 1,   stroke: true },
-  hidden:   { fillOpacity: 0, color: 'transparent',   weight: 0,   stroke: false },
+  // Fog-of-war: opaque fill matching the map background so the country shape
+  // and outline are invisible. No stroke — a visible border would reveal shape.
+  fogged:   { fillColor: '#0f1923', fillOpacity: 1,    color: '#0f1923', weight: 0,   stroke: false },
+  // Truly absent from our dataset — remain transparent so the tile shows through.
+  hidden:   { fillOpacity: 0,       color: 'transparent', weight: 0,     stroke: false },
 };
 
 // ─── Input aliases ────────────────────────────────────────────────────────────
@@ -298,11 +302,15 @@ function getFeatureStyle(ourName) {
   if (ourName === currentCountry?.name)              return STYLES.current;
   if (ourName === destCountry?.name)                 return STYLES.dest;
   if (route.includes(ourName))                       return STYLES.visited;
-  return STYLES.hidden;   // unrevealed — invisible
+  return STYLES.fogged;   // in dataset, not yet reached — blends into map background
 }
 
-function updateMapStyles() {
+// animate=true adds the CSS transition class so reveals fade in smoothly.
+// Pass false (default) on game reset so previously-revealed countries snap
+// back to fog instantly rather than animating out.
+function updateMapStyles(animate = false) {
   if (!geoLayer) return;
+  document.getElementById('map').classList.toggle('is-animating', animate);
   for (const [name, layer] of Object.entries(layerByName)) {
     layer.setStyle(getFeatureStyle(name));
   }
@@ -359,7 +367,7 @@ function selectNeighbor(name) {
 
   document.getElementById('steps-taken').textContent = route.length - 1;
   renderRoute();
-  updateMapStyles();
+  updateMapStyles(true);   // animate: fade the newly-reached country in
   updateRouteLine();
 
   if (name === destCountry.name) {

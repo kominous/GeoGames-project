@@ -195,6 +195,13 @@
 .final-step  { white-space: nowrap; }
 .final-arrow { color: var(--text-muted); }
 
+/* Fog-of-war reveal transition.
+   The .is-animating class is toggled on only during a valid player move,
+   so reveals fade in but the reset to fog on a new puzzle is instant. */
+#map.is-animating .leaflet-overlay-pane path {
+  transition: fill 0.4s ease, fill-opacity 0.45s ease;
+}
+
 /* Responsive */
 @media (max-width: 640px) {
   .endpoints {

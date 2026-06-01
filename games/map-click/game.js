@@ -31,17 +31,11 @@ function initMap() {
     zoomControl: true,
   });
 
-  // Esri Dark Gray Canvas Base — purely physical, no admin borders or labels of any kind
-  L.tileLayer('https://server.arcgisonline.com/arcgis/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
-    attribution: 'Tiles © <a href="https://www.esri.com/">Esri</a>',
-    maxZoom: 16,
-  }).addTo(map);
-
-  // Esri reference overlay for country names — capped at zoom 4 so province labels
-  // and borders (which only appear at zoom 5+) are never loaded or shown
-  L.tileLayer('https://server.arcgisonline.com/arcgis/rest/services/Canvas/World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}', {
-    attribution: '',
-    maxZoom: 4,
+  // CARTO Dark Matter — no labels, no country names
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+    subdomains: 'abcd',
+    maxZoom: 20,
   }).addTo(map);
 
   map.on('click', onMapClick);

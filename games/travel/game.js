@@ -161,12 +161,12 @@ function initMap() {
     zoomControl: true,
   });
 
-  // Physical base — no borders, no labels at any zoom level
-  L.tileLayer('https://server.arcgisonline.com/arcgis/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
-    attribution: 'Tiles © <a href="https://www.esri.com/">Esri</a>',
-    maxZoom: 16,
+  // CARTO Dark Matter — no labels, no place names, no country names at any zoom level
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+    subdomains: 'abcd',
+    maxZoom: 20,
   }).addTo(map);
-  // No reference overlay — country names must not be visible
 }
 
 async function loadGeoData() {

@@ -201,5 +201,123 @@ const GeoUtils = {
     const now = new Date();
     const today = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate());
     return Math.floor((today - epoch) / 86400000) + 1;
+  },
+
+  // ---- Sound effects & mute toggle ----------------------------------------
+
+  _audioCtx: null,
+
+  // Returns the shared AudioContext, creating it lazily on first call.
+  // Returns null if the browser doesn't support Web Audio.
+  _getAudioCtx() {
+    if (!this._audioCtx) {
+      try {
+        this._audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      } catch (_) { return null; }
+    }
+    return this._audioCtx;
+  },
+
+  isMuted() {
+    return localStorage.getItem('geogames_muted') === 'true';
+  },
+
+  setMuted(bool) {
+    localStorage.setItem('geogames_muted', bool ? 'true' : 'false');
+    // Sync every mounted toggle button on the page
+    document.querySelectorAll('.geo-mute-btn').forEach(btn => {
+      btn.textContent = bool ? '🔇' : '🔊';
+      btn.title       = bool ? 'Unmute sounds' : 'Mute sounds';
+    });
+  },
+
+  toggleMute() {
+    this.setMuted(!this.isMuted());
+  },
+
+  // Short rising two-note blip — signals a correct answer.
+  playCorrect() {
+    if (this.isMuted()) return;
+    try {
+      const ctx = this._getAudioCtx();
+      if (!ctx) return;
+      if (ctx.state === 'suspended') ctx.resume();
+      const now = ctx.currentTime;
+
+      // Two independent triangle-wave notes, ascending pitch
+      [[520, 0, 0.15], [780, 0.075, 0.13]].forEach(([freq, delay, peak]) => {
+        const osc  = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'triangle';
+        osc.frequency.value = freq;
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        gain.gain.setValueAtTime(0, now + delay);
+        gain.gain.linearRampToValueAtTime(peak, now + delay + 0.008);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + delay + 0.085);
+        osc.start(now + delay);
+        osc.stop(now + delay + 0.09);
+      });
+    } catch (_) { /* never interrupt gameplay */ }
+  },
+
+  // Soft descending glide — signals a wrong answer.
+  playWrong() {
+    if (this.isMuted()) return;
+    try {
+      const ctx = this._getAudioCtx();
+      if (!ctx) return;
+      if (ctx.state === 'suspended') ctx.resume();
+      const now = ctx.currentTime;
+
+      const osc  = ctx.createOscillator();
+      const gain = ctx.createGain();
+      // Triangle wave is softer than square — gentle descending pitch
+      osc.type = 'triangle';
+      osc.frequency.setValueAtTime(220, now);
+      osc.frequency.exponentialRampToValueAtTime(130, now + 0.18);
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      gain.gain.setValueAtTime(0, now);
+      gain.gain.linearRampToValueAtTime(0.12, now + 0.01);
+      gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.18);
+      osc.start(now);
+      osc.stop(now + 0.19);
+    } catch (_) { /* never interrupt gameplay */ }
+  },
+
+  // Injects a small 🔊/🔇 toggle button into containerSelector.
+  // Wraps it in <li> automatically when the container is a <ul> or <ol>.
+  mountMuteButton(containerSelector) {
+    const container = document.querySelector(containerSelector);
+    if (!container) return;
+
+    // Inject button styles once per page load
+    if (!document.getElementById('geo-mute-style')) {
+      const s = document.createElement('style');
+      s.id = 'geo-mute-style';
+      s.textContent =
+        '.geo-mute-btn{background:transparent;border:1px solid var(--border);' +
+        'border-radius:6px;color:var(--text-secondary);cursor:pointer;' +
+        'font-size:.9rem;padding:3px 8px;line-height:1.5;' +
+        'transition:color .2s,border-color .2s;font-family:inherit}' +
+        '.geo-mute-btn:hover{color:var(--accent);border-color:var(--accent)}';
+      document.head.appendChild(s);
+    }
+
+    const btn = document.createElement('button');
+    btn.className = 'geo-mute-btn';
+    btn.setAttribute('aria-label', 'Toggle sound');
+    btn.title     = this.isMuted() ? 'Unmute sounds' : 'Mute sounds';
+    btn.textContent = this.isMuted() ? '🔇' : '🔊';
+    btn.addEventListener('click', () => this.toggleMute());
+
+    if (container.tagName === 'UL' || container.tagName === 'OL') {
+      const li = document.createElement('li');
+      li.appendChild(btn);
+      container.appendChild(li);
+    } else {
+      container.appendChild(btn);
+    }
   }
 };

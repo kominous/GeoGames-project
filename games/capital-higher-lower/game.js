@@ -79,6 +79,7 @@ function guess(direction) {
   unknownCard.classList.add('reveal', correct ? 'correct-reveal' : 'wrong-reveal');
 
   GeoUtils.showFlash(correct);
+  if (correct) GeoUtils.playCorrect(); else GeoUtils.playWrong();
 
   if (correct) {
     score++;
@@ -110,4 +111,5 @@ function shareScore() {
 }
 
 // Boot
+GeoUtils.mountMuteButton('.site-nav');
 init();

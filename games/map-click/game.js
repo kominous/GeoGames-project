@@ -151,6 +151,9 @@ function onMapClick(e) {
   pointsEl.textContent = `+${points}`;
   pointsEl.className = 'result-value ' + (points >= 700 ? 'excellent' : points >= 350 ? 'good' : 'poor');
 
+  // Sound: ≥700 pts (within ~400 km) = correct, otherwise wrong
+  if (points >= 700) GeoUtils.playCorrect(); else GeoUtils.playWrong();
+
   document.getElementById('click-hint').style.display = 'none';
   document.getElementById('round-result').style.display = '';
 
@@ -198,4 +201,5 @@ function shareScore() {
 }
 
 // Boot
+GeoUtils.mountMuteButton('.site-nav');
 init();

@@ -3,22 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GeoGames — Free Geography Quiz Games</title>
+  <title>Meridly — Free Geography Quiz Games</title>
   <meta name="description" content="Play free geography quiz games and test your knowledge of world capitals, flags, and populations. New challenges every time.">
-  <link rel="canonical" href="https://geo-games-project-1.vercel.app/">
+  <link rel="canonical" href="https://meridly.net/">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://geo-games-project-1.vercel.app/">
-  <meta property="og:title" content="GeoGames — Free Geography Quiz Games">
+  <meta property="og:url" content="https://meridly.net/">
+  <meta property="og:title" content="Meridly — Free Geography Quiz Games">
   <meta property="og:description" content="Play free geography quiz games and test your knowledge of world capitals, flags, and populations. New challenges every time.">
-  <meta property="og:image" content="https://geo-games-project-1.vercel.app/assets/images/og-hub.png">
+  <meta property="og:image" content="https://meridly.net/assets/images/og-hub.png">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="GeoGames — Free Geography Quiz Games">
+  <meta name="twitter:title" content="Meridly — Free Geography Quiz Games">
   <meta name="twitter:description" content="Play free geography quiz games and test your knowledge of world capitals, flags, and populations. New challenges every time.">
-  <meta name="twitter:image" content="https://geo-games-project-1.vercel.app/assets/images/og-hub.png">
+  <meta name="twitter:image" content="https://meridly.net/assets/images/og-hub.png">
 
   <link rel="stylesheet" href="/css/global.css">
 
@@ -73,8 +73,8 @@
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "GeoGames",
-    "url": "https://geo-games-project-1.vercel.app/",
+    "name": "Meridly",
+    "url": "https://meridly.net/",
     "description": "Play free geography quiz games and test your knowledge of world capitals, flags, and populations."
   }
   </script>
@@ -84,7 +84,7 @@
   <header class="site-header">
     <a href="/" class="site-logo">
       <span class="logo-icon">🌍</span>
-      <span class="logo-text">Geo<span>Games</span></span>
+      <span class="logo-text">Meridly</span>
     </a>
     <nav>
       <ul class="site-nav">
@@ -176,10 +176,12 @@
   </main>
 
   <footer class="site-footer">
-    <p>GeoGames — Data sourced from public datasets.</p>
+    <p>Meridly — Data sourced from public datasets.</p>
   </footer>
 
+  <script src="/js/shared.js"></script>
   <script>
+    GeoUtils.mountMuteButton('.site-nav');
     (function () {
       var d   = new Date();
       var pad = function (n) { return String(n).padStart(2, '0'); };

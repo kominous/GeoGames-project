@@ -183,6 +183,7 @@ function submitGuess() {
   const flagImg = document.getElementById('flag-img');
 
   GeoUtils.showFlash(correct);
+  if (correct) GeoUtils.playCorrect(); else GeoUtils.playWrong();
 
   if (correct) {
     score++;
@@ -232,4 +233,5 @@ function shareScore() {
 }
 
 // Boot
+GeoUtils.mountMuteButton('.site-nav');
 init();

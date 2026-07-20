@@ -1,6 +1,6 @@
 /* Daily Challenge — Game Logic */
 
-const SITE_URL = 'https://geo-games-project-1.vercel.app';
+const SITE_URL = 'https://meridly.net';
 
 const Q_META = [
   { label: '🏁 Flag Recognition' },
@@ -86,7 +86,7 @@ function showScreen(id) {
 }
 
 function dailyLabel() {
-  return `GeoGames Daily #${GeoUtils.getDailyNumber()}`;
+  return `Meridly Daily #${GeoUtils.getDailyNumber()}`;
 }
 
 function streakText(n) {
@@ -185,6 +185,7 @@ function answerMC(selectedIdx) {
   const correct = q.options[selectedIdx] === q.answer;
   results.push(correct);
   GeoUtils.showFlash(correct);
+  if (correct) GeoUtils.playCorrect(); else GeoUtils.playWrong();
 
   document.querySelectorAll('.mc-btn').forEach((btn, i) => {
     btn.disabled = true;
@@ -204,6 +205,7 @@ function answerHL(selectedIdx) {
   const correct = selectedIdx === q.correct;
   results.push(correct);
   GeoUtils.showFlash(correct);
+  if (correct) GeoUtils.playCorrect(); else GeoUtils.playWrong();
 
   const btn0 = document.getElementById('hl-btn-0');
   const btn1 = document.getElementById('hl-btn-1');
@@ -332,7 +334,7 @@ async function shareResult() {
   const n     = GeoUtils.getDailyNumber();
   const score = res.filter(Boolean).length;
   const grid  = res.map(r => r ? '🟩' : '🟥').join('');
-  const text  = `GeoGames Daily #${n}\n🌍 ${score}/5\n${grid}\n${SITE_URL}/games/daily/`;
+  const text  = `Meridly Daily #${n}\n🌍 ${score}/5\n${grid}\n${SITE_URL}/games/daily/`;
 
   if (navigator.share) {
     try { await navigator.share({ text }); return; } catch (_) { /* cancelled */ }
@@ -360,4 +362,5 @@ function showToast(msg) {
 }
 
 // ---------------------------------------------------------------------------
+GeoUtils.mountMuteButton('.site-nav');
 init();

@@ -1,0 +1,252 @@
+/* City Chain — Game Styles */
+
+/* ---- Start screen ---- */
+
+.rules-list {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg) var(--space-lg) var(--space-lg) var(--space-xl);
+  margin-bottom: var(--space-lg);
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.rules-list li { margin-bottom: var(--space-xs); }
+.rules-list li:last-child { margin-bottom: 0; }
+
+.mode-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+}
+
+.mode-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xs);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg) var(--space-md);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s, border-color 0.2s;
+}
+
+.mode-card:hover {
+  transform: translateY(-3px);
+  background: var(--bg-card-hover);
+  border-color: var(--accent);
+}
+
+.mode-card:active { transform: translateY(0); }
+
+.mode-emoji { font-size: 2rem; }
+
+.mode-name {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.mode-desc {
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  text-align: center;
+}
+
+.mode-best {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--accent-warm);
+  min-height: 1.1rem;
+}
+
+/* ---- Target country card ---- */
+
+.target-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.target-flag {
+  min-height: 44px;
+  margin-bottom: var(--space-sm);
+}
+
+.target-flag .flag-img {
+  width: 64px;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.target-country {
+  font-family: var(--font-mono);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.target-ask {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-top: var(--space-xs);
+}
+
+.target-ask strong {
+  color: var(--accent);
+  font-family: var(--font-mono);
+}
+
+/* Segmented progress — one slot per city required this round */
+.progress-track {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+  margin-top: var(--space-md);
+}
+
+.progress-slot {
+  width: 26px;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--border);
+  transition: background 0.25s;
+}
+
+.progress-slot.filled { background: var(--accent-green); }
+
+/* ---- Input ---- */
+
+.input-area {
+  display: flex;
+  gap: var(--space-md);
+  max-width: 520px;
+  margin: 0 auto var(--space-xs);
+}
+
+.answer-input {
+  flex: 1;
+  min-width: 0;
+  padding: var(--space-md) var(--space-lg);
+  background: var(--bg-card);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.answer-input:focus { border-color: var(--accent); }
+
+.answer-input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%      { transform: translateX(-8px); }
+  40%      { transform: translateX( 8px); }
+  60%      { transform: translateX(-5px); }
+  80%      { transform: translateX( 5px); }
+}
+
+.answer-input.shake { animation: shake 0.4s ease; }
+
+/* ---- Feedback line ---- */
+
+.chain-feedback {
+  min-height: 1.6rem;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  padding: var(--space-xs) 0;
+  color: transparent;
+  margin-bottom: var(--space-sm);
+}
+
+.chain-feedback.ok    { color: var(--accent-green); }
+.chain-feedback.dup   { color: var(--accent-warm); }
+.chain-feedback.miss  { color: var(--accent-red); }
+
+/* ---- Named-city chips ---- */
+
+.chip-tray {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-sm);
+  min-height: 2.2rem;
+  margin-bottom: var(--space-lg);
+}
+
+.city-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(52, 211, 153, 0.12);
+  border: 1px solid rgba(52, 211, 153, 0.35);
+  color: var(--accent-green);
+  border-radius: 999px;
+  padding: 4px 12px;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  animation: chip-pop 0.28s ease;
+}
+
+.city-chip .chip-pop {
+  color: var(--text-muted);
+  font-size: 0.72rem;
+}
+
+@keyframes chip-pop {
+  0%   { transform: scale(0.7); opacity: 0; }
+  70%  { transform: scale(1.06); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.giveup-row { text-align: center; }
+
+/* ---- End screen ---- */
+
+.end-detail {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-top: var(--space-sm);
+}
+
+.end-detail strong {
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+}
+
+.end-best {
+  color: var(--accent-warm);
+  font-family: var(--font-mono);
+  margin-top: var(--space-sm);
+}
+
+/* ---- Responsive ---- */
+
+@media (max-width: 640px) {
+  .input-area { flex-direction: column; }
+
+  .mode-grid { grid-template-columns: 1fr; }
+
+  .target-country { font-size: 1.3rem; }
+
+  .progress-slot { width: 20px; }
+}

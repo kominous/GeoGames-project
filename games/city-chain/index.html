@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>City Chain — Name Cities by Country Quiz</title>
+  <meta name="description" content="An escalating geography challenge: name 1 city, then 2, then 3, each in a new country. How deep can you go before you run out of cities?">
+  <link rel="canonical" href="https://meridly.net/games/city-chain/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://meridly.net/games/city-chain/">
+  <meta property="og:title" content="City Chain — Name Cities by Country Quiz">
+  <meta property="og:description" content="An escalating geography challenge: name 1 city, then 2, then 3, each in a new country. How deep can you go before you run out of cities?">
+  <meta property="og:image" content="https://meridly.net/assets/images/og-city-chain.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="City Chain — Name Cities by Country Quiz">
+  <meta name="twitter:description" content="An escalating geography challenge: name 1 city, then 2, then 3, each in a new country. How deep can you go before you run out of cities?">
+  <meta name="twitter:image" content="https://meridly.net/assets/images/og-city-chain.png">
+
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "City Chain — Name Cities by Country Quiz",
+    "url": "https://meridly.net/games/city-chain/",
+    "description": "An escalating geography challenge: name one city, then two, then three, each round in a new country.",
+    "applicationCategory": "Game",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="/" class="site-logo">
+      <span class="logo-icon">🌍</span>
+      <span class="logo-text">Meridly</span>
+    </a>
+    <nav>
+      <ul class="site-nav">
+        <li><a href="/">← All Games</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="game-container">
+
+    <!-- Loading -->
+    <div id="screen-loading">
+      <div style="text-align:center;padding:var(--space-2xl) 0;color:var(--text-secondary);">
+        Loading cities…
+      </div>
+    </div>
+
+    <!-- Start -->
+    <div id="screen-start" style="display:none;">
+      <h1 class="game-title">City Chain</h1>
+      <p class="game-subtitle">Round 1: name 1 city. Round 2: a new country, 2 cities. Keep going until you're stuck.</p>
+
+      <ol class="rules-list">
+        <li>Each round gives you a new country and asks for one more city than the last.</li>
+        <li>Type any city in that country — spelling variants and local names are accepted.</li>
+        <li>Name them all to advance. Your score is the deepest round you complete.</li>
+      </ol>
+
+      <div class="mode-grid">
+        <button class="mode-card" onclick="startRun('world')">
+          <span class="mode-emoji">🌍</span>
+          <span class="mode-name">World</span>
+          <span class="mode-desc">Every country in the atlas</span>
+          <span class="mode-best" id="best-world"></span>
+        </button>
+        <button class="mode-card" onclick="startRun('europe')">
+          <span class="mode-emoji">🇪🇺</span>
+          <span class="mode-name">Europe</span>
+          <span class="mode-desc">European countries only</span>
+          <span class="mode-best" id="best-europe"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Game -->
+    <div id="screen-game" style="display:none;">
+
+      <div class="score-bar">
+        <div>
+          <div class="label">Round</div>
+          <div class="value streak" id="stat-round">1</div>
+        </div>
+        <div>
+          <div class="label">Cities</div>
+          <div class="value" id="stat-cities">0</div>
+        </div>
+        <div>
+          <div class="label">Best</div>
+          <div class="value" id="stat-best">0</div>
+        </div>
+      </div>
+
+      <!-- Current country -->
+      <div class="target-card">
+        <div class="target-flag" id="target-flag"></div>
+        <div class="target-country" id="target-country"></div>
+        <div class="target-ask" id="target-ask"></div>
+        <div class="progress-track" id="progress-track"></div>
+      </div>
+
+      <!-- Input -->
+      <div class="input-area">
+        <input
+          type="text"
+          id="answer-input"
+          class="answer-input"
+          placeholder="Type a city…"
+          autocomplete="off"
+          autocorrect="off"
+          autocapitalize="off"
+          spellcheck="false"
+        >
+        <button class="btn btn-primary" id="submit-btn" onclick="submitGuess()">Add</button>
+      </div>
+      <div id="feedback" class="chain-feedback"></div>
+
+      <!-- Named so far -->
+      <div class="chip-tray" id="chip-tray"></div>
+
+      <div class="giveup-row">
+        <button class="btn btn-outline" onclick="giveUp()">I'm stuck</button>
+      </div>
+    </div>
+
+    <!-- End -->
+    <div id="screen-end" style="display:none;">
+      <div class="game-over">
+        <div class="final-label" id="end-label">YOU REACHED</div>
+        <div class="final-score" id="end-round">0</div>
+        <div class="end-detail" id="end-detail"></div>
+        <div id="end-best"></div>
+        <div style="margin-top: var(--space-lg);">
+          <button class="btn btn-primary" onclick="showStart()">Play again</button>
+          <button class="btn share-btn" onclick="shareScore()">Share</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="/js/shared.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>

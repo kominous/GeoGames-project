@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Globetrotter — Spin the Globe Geography Game</title>
+  <meta name="description" content="Spin a 3D globe, fly Pip to any country, learn a few facts, then pass a quick quiz to stamp your passport. Unlock city stops as you go.">
+  <link rel="canonical" href="https://meridly.net/games/globe/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://meridly.net/games/globe/">
+  <meta property="og:title" content="Globetrotter — Spin the Globe Geography Game">
+  <meta property="og:description" content="Spin a 3D globe, fly Pip to any country, learn a few facts, then pass a quick quiz to stamp your passport. Unlock city stops as you go.">
+  <meta property="og:image" content="https://meridly.net/assets/images/og-globe.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Globetrotter — Spin the Globe Geography Game">
+  <meta name="twitter:description" content="Spin a 3D globe, fly Pip to any country, learn a few facts, then pass a quick quiz to stamp your passport. Unlock city stops as you go.">
+  <meta name="twitter:image" content="https://meridly.net/assets/images/og-globe.png">
+
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Globetrotter — Spin the Globe Geography Game",
+    "url": "https://meridly.net/games/globe/",
+    "description": "Spin a globe, fly to any country, learn a few facts and pass a quick quiz to stamp your passport.",
+    "applicationCategory": "Game",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+</head>
+<body class="globe-page">
+
+  <header class="site-header">
+    <a href="/" class="site-logo">
+      <span class="logo-icon">🌍</span>
+      <span class="logo-text">Meridly</span>
+    </a>
+    <nav>
+      <ul class="site-nav">
+        <li><a href="/">← All Games</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="gt-app">
+    <div class="gt-sky" id="gt-sky" aria-hidden="true"></div>
+
+    <!-- Loading -->
+    <div id="screen-loading" class="gt-loading">Loading the globe…</div>
+
+    <!-- Main -->
+    <div id="screen-app" class="gt-main" style="display:none;">
+
+      <div class="gt-top">
+        <div class="gt-topbar">
+          <h1 class="gt-brand"><span class="gt-brand-pip" id="brand-pip"></span>Globetrotter</h1>
+          <div class="gt-chip" title="Day streak">🔥 <span id="stat-streak">0</span></div>
+          <div class="gt-chip" title="Experience"><span class="gt-xp-icon">✦</span> <span id="stat-xp">0</span></div>
+          <button class="gt-chip gt-chip-btn" title="Passport" onclick="openPassport()">📖 <span id="stat-passport">0</span></button>
+        </div>
+        <div class="gt-search">
+          <input
+            type="text"
+            id="search-input"
+            class="gt-field"
+            placeholder="Search countries"
+            aria-label="Search countries"
+            autocomplete="off"
+            autocorrect="off"
+            spellcheck="false"
+          >
+          <div class="gt-results" id="search-results" style="display:none;"></div>
+        </div>
+      </div>
+
+      <div class="gt-stage" id="main-stage">
+        <canvas id="main-canvas" role="application" aria-label="Interactive globe. Drag to spin, tap a marker to travel there."></canvas>
+        <div class="gt-pip" id="main-pip"></div>
+      </div>
+
+      <div class="gt-bottom" id="sheet"></div>
+    </div>
+
+    <!-- Lesson overlay -->
+    <div id="lesson" class="gt-lesson" style="display:none;">
+      <div class="gt-lesson-top">
+        <button class="gt-icon-btn" aria-label="Leave lesson" onclick="closeLesson()">×</button>
+        <div class="gt-progress"><div class="gt-progress-fill" id="lesson-progress"></div></div>
+        <div class="gt-hearts" id="lesson-hearts" aria-label="Hearts left"></div>
+      </div>
+      <div class="gt-lesson-body" id="lesson-body"></div>
+      <div class="gt-lesson-foot" id="lesson-foot-wrap">
+        <div class="gt-lesson-foot-inner" id="lesson-foot"></div>
+      </div>
+    </div>
+
+    <!-- Passport -->
+    <div id="passport" class="gt-backdrop" style="display:none;" onclick="closePassport()">
+      <div class="gt-passport gt-sheet-in" onclick="event.stopPropagation()" id="passport-body"></div>
+    </div>
+  </div>
+
+  <script src="/js/shared.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>

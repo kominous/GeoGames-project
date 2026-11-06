@@ -1,7 +1,8 @@
 /* Build data/cities.json from GeoNames dumps — Node built-ins only.
  *
  *   Inputs : scripts/cities15000.txt, scripts/countryInfo.txt
- *   Output : data/cities.json
+ *   Output : data/cities.json        (City Chain: names + alternates)
+ *            data/globe-cities.json  (Globetrotter: top cities with coordinates)
  *
  * Run: node scripts/build-cities.js
  */
@@ -12,6 +13,8 @@ const path = require('path');
 const SRC_CITIES  = path.join(__dirname, 'cities15000.txt');
 const SRC_COUNTRY = path.join(__dirname, 'countryInfo.txt');
 const OUT_FILE    = path.join(__dirname, '..', 'data', 'cities.json');
+const GLOBE_FILE  = path.join(__dirname, '..', 'data', 'globe-cities.json');
+const GLOBE_CITIES = 3;     // city stops per country in Globetrotter
 
 const MAX_ALT        = 30;  // accepted alternate spellings kept per city
 const ALT_DIVERSITY  = 0.9; // reject an alternate this similar to one already kept
@@ -204,12 +207,16 @@ function parseCountryInfo() {
     const f = line.split('\t');
     const iso = f[0] && f[0].trim();
     if (!iso) continue;
-    meta[iso] = { name: (f[4] || iso).trim(), continent: (f[8] || '').trim() };
+    meta[iso] = {
+      name:      (f[4] || iso).trim(),
+      capital:   (f[5] || '').trim(),
+      continent: (f[8] || '').trim(),
+    };
   }
   return meta;
 }
 
-// ISO -> [ { name, pop, alt } ]
+// ISO -> [ { name, pop, alt, lat, lng } ]
 function parseCities() {
   const byCountry = {};
   for (const line of readLines(SRC_CITIES)) {
@@ -224,6 +231,8 @@ function parseCities() {
       name,
       pop: parseInt(f[14], 10) || 0,
       alt: buildAlt(name, f[2].trim(), f[3] || ''),
+      lat: Math.round(parseFloat(f[4]) * 100) / 100,
+      lng: Math.round(parseFloat(f[5]) * 100) / 100,
     });
   }
   return byCountry;
@@ -245,6 +254,7 @@ function build() {
   for (const iso of Object.keys(byCountry).sort()) {
     const cities = byCountry[iso];
     const info   = meta[iso];
+    cities.sort((a, b) => b.pop - a.pop || a.name.localeCompare(b.name));
 
     if (cities.length < MIN_CITIES) {
       excluded.push({ iso, name: info ? info.name : iso, count: cities.length });
@@ -252,8 +262,7 @@ function build() {
     }
     if (!info) unknown.push(iso);
 
-    cities.sort((a, b) => b.pop - a.pop || a.name.localeCompare(b.name));
-    const kept = cities.slice(0, MAX_CITIES);
+    const kept = cities.slice(0, MAX_CITIES).map(({ name, pop, alt }) => ({ name, pop, alt }));
     totalCities += kept.length;
 
     out[iso] = {
@@ -266,7 +275,36 @@ function build() {
   fs.mkdirSync(path.dirname(OUT_FILE), { recursive: true });
   fs.writeFileSync(OUT_FILE, JSON.stringify(out, null, 2) + '\n', 'utf8');
 
+  const globe = buildGlobeCities(byCountry, meta);
+  fs.writeFileSync(GLOBE_FILE, JSON.stringify(globe) + '\n', 'utf8');
+
   report(out, excluded, unknown, totalCities);
+}
+
+// ISO -> [ { name, lat, lng } ]: the capital first (when GeoNames lists it),
+// then the most populous remaining cities. Every country is included,
+// regardless of MIN_CITIES. Expects each list already sorted by population.
+function buildGlobeCities(byCountry, meta) {
+  const out = {};
+  for (const iso of Object.keys(byCountry).sort()) {
+    const cities  = byCountry[iso];
+    const capital = norm((meta[iso] && meta[iso].capital) || '');
+    // Exact name beats an alternate: Delhi lists "new delhi" as an alternate.
+    let capIdx = capital ? cities.findIndex(c => norm(c.name) === capital) : -1;
+    if (capIdx < 0 && capital) capIdx = cities.findIndex(c => c.alt.includes(capital));
+    const ordered = capIdx >= 0
+      ? [cities[capIdx], ...cities.filter((_, i) => i !== capIdx)]
+      : cities;
+    // Skip near-duplicates (New Delhi / Delhi): two stops at the same spot on the globe.
+    const picked = [];
+    for (const c of ordered) {
+      if (picked.length >= GLOBE_CITIES) break;
+      if (picked.some(p => Math.abs(p.lat - c.lat) < 0.2 && Math.abs(p.lng - c.lng) < 0.2)) continue;
+      picked.push({ name: c.name, lat: c.lat, lng: c.lng });
+    }
+    out[iso] = picked;
+  }
+  return out;
 }
 
 function report(out, excluded, unknown, totalCities) {
@@ -305,7 +343,9 @@ function report(out, excluded, unknown, totalCities) {
   console.log(`  countries included : ${included.length}`);
   console.log(`  countries excluded : ${excluded.length}`);
   console.log(`  total cities       : ${totalCities}`);
-  console.log(`  output             : ${path.relative(path.join(__dirname, '..'), OUT_FILE).replace(/\\/g, '/')} (${(bytes / 1024).toFixed(0)} KB)\n`);
+  console.log(`  output             : ${path.relative(path.join(__dirname, '..'), OUT_FILE).replace(/\\/g, '/')} (${(bytes / 1024).toFixed(0)} KB)`);
+  const gBytes = fs.statSync(GLOBE_FILE).size;
+  console.log(`  globe output       : ${path.relative(path.join(__dirname, '..'), GLOBE_FILE).replace(/\\/g, '/')} (${(gBytes / 1024).toFixed(0)} KB)\n`);
 }
 
 build();

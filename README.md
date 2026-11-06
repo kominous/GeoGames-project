@@ -10,7 +10,11 @@ geo-games/
 ├── css/global.css           ← Shared styles, colors, typography
 ├── js/shared.js             ← Shared utilities (GeoUtils object)
 ├── data/countries.json      ← Master dataset (60+ countries)
+├── data/cities.json         ← City Chain names + alternates (built by scripts/build-cities.js)
+├── data/globe-cities.json   ← Globetrotter city stops with coordinates (same script)
+├── data/globe-facts.json    ← Globetrotter fact per country, keyed by ISO code
 ├── games/
+│   ├── globe/               ← Globetrotter: canvas globe, lessons, passport
 │   ├── higher-lower/        ← Population higher/lower (working example)
 │   │   ├── index.html
 │   │   ├── style.css
